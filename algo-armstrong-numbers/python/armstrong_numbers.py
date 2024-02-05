@@ -19,7 +19,7 @@ def split_digits(int_num) :
 
     return lst_result
 
-'''
+''' 
     This function calculates the total of each digit of a list calculated to the
     power of the list length
     @param {list} lst_digits List of digits to calculate
@@ -42,6 +42,12 @@ def calculate_number(lst_digits) :
 
 # End Helper Functions
 
+'''
+    This function accepts a range of numbrers as a list and returns the Armstrong Numbers
+    found in that list
+    @param {list} numbers List of a range of numbers to search
+    @returns List containing Armstrong Numbers found in the given list
+'''
 def find_armstrong_numbers(numbers):
     lst_result = []
 
@@ -59,4 +65,4 @@ def find_armstrong_numbers(numbers):
 
 
 
-print(find_armstrong_numbers([5,371,333]))
+#print(find_armstrong_numbers([5,371,333]))
