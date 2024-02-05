@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.12
 from armstrong_numbers import find_armstrong_numbers
 
 print(find_armstrong_numbers([0]) == [0]) 
