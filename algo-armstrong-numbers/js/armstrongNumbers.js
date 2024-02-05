@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // How can you make this more scalable and reusable later?
 
+// Begin Helper Functions
 
 /**
  * This function splits the digits of a number into an array.
@@ -18,6 +19,33 @@ function splitDigits(intNum) {
     return arrResult;
 }
 
+/**
+ * This function calculates the total of each digit as an array calculated to the power
+ * of the array length.
+ * @param {array} arrNum Array of digits to calculate
+ * @returns Calculated total of digits to the power of the length of the given array
+ */
+function calculateNumber(arrNum) {
+    let intTotal = 0;
+    let arrSubTotals = [];
+
+    // Iterate through arrNum and calculate the digits to the power of the length of the array
+    for(let intDigit of arrNum) {
+        let intThisSubTotal = (intDigit ** arrNum.length);
+        // Add them to the subtotal array 
+        arrSubTotals.push(intThisSubTotal);
+    }
+
+    // Add all of the subtotals together
+    for(let intDigit of arrSubTotals) {
+        intTotal += intDigit;
+    }
+
+    return intTotal;
+
+}
+
+// End Helper Functions
 
 /**
  * This function accepts a range of numbers as an array and returns the Armstrong Numbers
@@ -37,7 +65,9 @@ function findArmstrongNumbers(arrInput) {
 
         let arrThisNumDigits = splitDigits(intThisNum)
 
-        console.log(arrThisNumDigits)
+        let intThisTotal = calculateNumber(arrThisNumDigits)
+
+        console.log(arrThisNumDigits, intThisTotal)
     }
 
 
