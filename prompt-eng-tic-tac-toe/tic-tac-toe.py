@@ -66,7 +66,7 @@ def display_board(lst_board) :
     table.add_column("B", justify="center")
     table.add_column("C", justify="center")
 
-    table.add_row("1",f'{lst_board[0][0]}',f'{lst_board[0][0]}',f'{lst_board[0][0]}')
+    table.add_row("1",f'{lst_board[0][0]}',f'{lst_board[0][1]}',f'{lst_board[0][2]}')
     table.add_row("2",f'{lst_board[1][0]}',f'{lst_board[1][1]}',f'{lst_board[1][2]}')
     table.add_row("3",f'{lst_board[2][0]}',f'{lst_board[2][1]}',f'{lst_board[2][2]}')
 
@@ -130,6 +130,8 @@ def update_move(str_move, lst_board, str_turn) :
 def generate_ai_move() :
     int_col = random.choice([0,1,2])
     int_row = random.choice([0,1,2])
+
+    print(f"Col {int_col} Row {int_row}")
 
     return f'{int_row}{int_col}'
 
@@ -209,13 +211,14 @@ def play_game() :
             
             lst_board = update_move(str_ai_move, lst_board, str_turn)
             str_turn = "player"
-        
-        #game_over = True
-        if(check_board(lst_board)) :
+        print(lst_board)
+
+        str_winner = check_board(lst_board)
+        if(str_winner) :
             game_over = True
 
 
-    return str_player_move
+    return f"{str_winner} Wins!"
 
 print(play_game())
 
