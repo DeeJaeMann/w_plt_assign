@@ -82,7 +82,9 @@ function findArmstrongNumbers(arrInput) {
 }
 
 exports.findArmstrongNumbers = function() {
-
+//exports.findArmstrongNumbers;
 };
 
-console.log(findArmstrongNumbers(createArrayOfNum(99)))
+//module.exports = findArmstrongNumbers;
+
+//console.log(findArmstrongNumbers(createArrayOfNum(99)))
