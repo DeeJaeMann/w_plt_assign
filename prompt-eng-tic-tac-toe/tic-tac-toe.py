@@ -1,4 +1,8 @@
-#!/usr/bin/env python3.12
+#!/usr/bin/env python3.11
+
+from rich.table import Table
+from rich.console import Console
+from rich import box
 
 '''
     Features:
@@ -39,7 +43,25 @@
 
 # Begin Helper Functions
 
+def display_board(lst_board) :
+    """Displays the current board state
+    Args:
+        lst_board: List of current board status
+    Returns:
+        Pretty formated game board
+    """
+    table = Table(title="Tic-Tac-Toe", show_lines=True, box=box.ROUNDED)
 
+    table.add_column("")
+    table.add_column("A", justify="center")
+    table.add_column("B", justify="center")
+    table.add_column("C", justify="center")
+
+    table.add_row("1",f'{lst_board[0][0]}',f'{lst_board[1][0]}',f'{lst_board[2][0]}')
+    table.add_row("2",f'{lst_board[0][1]}',f'{lst_board[1][1]}',f'{lst_board[2][1]}')
+    table.add_row("3",f'{lst_board[0][2]}',f'{lst_board[1][2]}',f'{lst_board[2][2]}')
+
+    return table
 
 # End Helper Functions
 
@@ -52,6 +74,15 @@ def play_game() :
         Status of whether the player won or not
     """
 
-    pass
+    # Create a blank tic-tac-toe board
+    lst_board = [
+        ['','',''],
+        ['','',''],
+        ['','',''],
+    ]
+    console = Console()
+    console.print(display_board(lst_board))
 
 print(play_game())
+
+
