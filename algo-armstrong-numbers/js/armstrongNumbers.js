@@ -45,6 +45,11 @@ function calculateNumber(arrNum) {
 
 }
 
+// Copied from armstrongNumbersSpec.js to use for internal testing
+function createArrayOfNum(maxValue) {
+    return [...Array(maxValue).keys()];
+  }
+
 // End Helper Functions
 
 /**
@@ -56,21 +61,21 @@ function calculateNumber(arrNum) {
 function findArmstrongNumbers(arrInput) {
     let arrResult = [];
 
-    for(let intIndex in arrInput) {
+    for(let intNumber of arrInput) {
         // Take each number from the array and turn it into a string
         // Iterate through the characters of the string to calculate
         // the number to determine if it is an Armstrong Number or not
 
-        let intThisNum = arrInput[intIndex];
+        let intThisNum = intNumber;
 
         let arrThisNumDigits = splitDigits(intThisNum)
 
         let intThisTotal = calculateNumber(arrThisNumDigits)
 
-        console.log(arrThisNumDigits, intThisTotal)
+        if(intThisTotal === intNumber) {
+            arrResult.push(intNumber)
+        }
     }
-
-
 
     return arrResult;
 
@@ -80,4 +85,4 @@ exports.findArmstrongNumbers = function() {
 
 };
 
-console.log(findArmstrongNumbers([546, 25, 3]));
+console.log(findArmstrongNumbers(createArrayOfNum(99)))
