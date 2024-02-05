@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 // How can you make this more scalable and reusable later?
 
-function armstrongNumber(intNum) {
+function findArmstrongNumbers(intNum) {
 
     if(intNum >= 0 && intNum <= 999) {
 
-        
+
         return intNum;
     }
 
@@ -16,4 +16,4 @@ exports.findArmstrongNumbers = function() {
 
 };
 
-console.log(armstrongNumber(5));
+console.log(findArmstrongNumbers(5));
