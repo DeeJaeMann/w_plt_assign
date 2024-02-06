@@ -18,7 +18,11 @@ class User:
         self.driver_license = driver_license
 
     def __str__(self) -> str:
-        return f"{self.first_name} {self.last_name}"
+        return f"Full Name: {self.first_name} {self.last_name}\n \
+DOB: {self.dob}\n \
+E-Mail: {self.email}\n \
+Driver License: {self.driver_license}\n \
+*****"
 
 user_steve = User("Steve", "Murphy", "1979", "me@here.com", "113-223-123")
 user_joe = User("Joe", "Stewart", "2002", "you@there.net", "345-234-532")
