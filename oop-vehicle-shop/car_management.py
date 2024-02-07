@@ -295,6 +295,11 @@ class CarManager:
     @classmethod
     def menu_sel_view_all_cars(cls) :
         """Selection: View all cars
+
+        Args:
+            None
+        Returns:
+            None
         """
         print("\n---- View All Cars ----")
 
