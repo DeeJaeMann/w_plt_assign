@@ -1,6 +1,5 @@
 #!/usr/bin/env python3.12
 import re
-import sys
 
 class Student:
     """Student class for use in school registry"""
@@ -103,9 +102,6 @@ class Student:
         else: print("Outside of grade range (9-12 only)")
 
     # Methods
-        
-
-    
     def advance(self, years = 1) :
         """Adds years to current grade if valid
 
@@ -115,7 +111,6 @@ class Student:
             Success or Fail message
         """
         grade = self.convert_grade(self.get_grade)
-
         # Assign graduation status after 12th grade
         if grade + 1 > 12:
             self._grade = 'Graduated'
@@ -125,9 +120,8 @@ class Student:
             return 'Cannot go back a grade'
         
         grade += years
-
         grade = f"{grade}th"
-        
+
         # Calls grade into grade setting and captures any invalid entry output into grade_result
         self.set_grade = grade
 
@@ -142,7 +136,6 @@ class Student:
         Returns:
             Message including subject
         """
-
         return f"{self.get_name} is studying {str(subject).title()}"
 
 # student = Student("Jaxson", 10, '7th')
