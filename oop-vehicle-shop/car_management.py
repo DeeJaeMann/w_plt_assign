@@ -20,6 +20,13 @@ class CarManager:
 
     # Methods
     def display_menu(self) :
+        """Displays the menu
+
+        Args:
+            None
+        Returns:
+            Menu display
+        """
         print("\n----  WELCOME  ----\n\
 1. Add a car\n\
 2. View all cars\n\
@@ -28,7 +35,12 @@ class CarManager:
 5. Service a car\n\
 6. Update mileage\n\
 7. Quit\n")
-        
+
+    def get_input(self) :
+        pass
+
+
+
 car1 = CarManager(1, "Dodge", "Charger", 1978, 50000, "None")
 
 car1.display_menu()
