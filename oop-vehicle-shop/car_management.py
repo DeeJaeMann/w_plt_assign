@@ -247,8 +247,6 @@ class CarManager:
 
     # Class methods
 
-
-
     @classmethod
     def display_menu(cls) :
         """Displays the menu
@@ -266,7 +264,7 @@ class CarManager:
         return str_result
     
     @classmethod
-    def get_input(cls) :
+    def get_menu_input(cls) :
         """Displays the input prompt and receives user input
 
         Args:
@@ -289,6 +287,42 @@ class CarManager:
             print(CarManager.display_menu())
 
     @classmethod
+    def menu_sel_add_car(cls) :
+        """Selection: Add a car
+        """
+        print("Add A Car")
+
+    @classmethod
+    def menu_sel_view_all_cars(cls) :
+        """Selection: View all cars
+        """
+        print("View All Cars")
+
+    @classmethod
+    def menu_sel_view_total_car_num(cls) :
+        """Selection: View total number of cars
+        """
+        print("View Total Number of Cars")
+
+    @classmethod
+    def menu_sel_see_car_details(cls) :
+        """Selection: See a car's details
+        """
+        print("See A Car's Details")
+
+    @classmethod
+    def menu_sel_service_car(cls) :
+        """Selection: Service a car
+        """
+        print("Service A Car")
+
+    @classmethod
+    def menu_sel_update_mileage(cls) :
+        """Selection: Update Mileage
+        """
+        print("Update Mileage")
+
+    @classmethod
     def run_ui(cls) :
         """Runs the user interface
 
@@ -301,8 +335,24 @@ class CarManager:
 
         while not(int_selection == 7) :
             print(CarManager.display_menu())
-            int_selection = CarManager.get_input()
+            int_selection = CarManager.get_menu_input()
+
+            match int_selection :
+                case 1:
+                    CarManager.menu_sel_add_car()
+                case 2:
+                    CarManager.menu_sel_view_all_cars()
+                case 3:
+                    CarManager.menu_sel_view_total_car_num()
+                case 4:
+                    CarManager.menu_sel_see_car_details()
+                case 5:
+                    CarManager.menu_sel_service_car()
+                case 6:
+                    CarManager.menu_sel_update_mileage()
+
 
         print("Goodbye!")
 
 CarManager.run_ui()
+#CarManager.menu_sel_add_car()
