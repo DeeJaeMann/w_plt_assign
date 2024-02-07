@@ -10,10 +10,10 @@ class CarManager:
     # Constructor
     def __init__(self, make, model, year, mileage, services = []) :
         self._id = CarManager.total_cars
-        self.make = make
-        self.model = model
-        self.year = year
-        self._mileage = mileage
+        self._make = str(make).lower()
+        self._model = str(model).lower()
+        self._year = int(year)
+        self._mileage = int(mileage)
         self._services = services
 
         CarManager.total_cars += 1
@@ -58,6 +58,8 @@ class CarManager:
             None
         """
         self._make = str(str_make).lower()
+
+        self.update_cars(self._id)
     
     @property
     def model(self) :
@@ -81,6 +83,8 @@ class CarManager:
         """
         self._model = str(str_model).lower()
 
+        self.update_cars(self._id)
+
     @property
     def year(self) :
         """Getter: Returns the year of the car
@@ -103,8 +107,10 @@ class CarManager:
         """
         if type(int_year) == int:
             self._year = int_year
+
+            self.update_cars(self._id)
         else :
-            print("Year must be an int!  Property not updated!")
+            print("Warning: Year must be an int!  Property not updated!")
 
 
     def add_car(self) :
@@ -116,10 +122,10 @@ class CarManager:
             None
         """
         CarManager.all_cars.append({
-                "id" : self.id,
-                "make" : self.make,
-                "model" : self.model,
-                "year" : self.year,
+                "id" : self._id,
+                "make" : self._make,
+                "model" : self._model,
+                "year" : self._year,
                 "mileage" : self._mileage,
                 "services" : self._services
                 })
@@ -132,9 +138,10 @@ class CarManager:
         Returns:
             None
         """
+        print(f"Updating Car ID {int_id}")
         CarManager.all_cars[int_id] = {
                 "id" : self._id,
-                "make" : self.make,
+                "make" : self._make,
                 "model" : self._model,
                 "year" : self._year,
                 "mileage" : self._mileage,
@@ -179,3 +186,15 @@ car2 = CarManager("Chevy", "Camaro", 1969, 90000)
 
 print(CarManager.all_cars)
 # # print(CarManager.total_cars)
+
+car1.make = "Jeep"
+
+print(CarManager.all_cars)
+
+car1.model = "Firebird"
+
+print(CarManager.all_cars)
+
+car1.year = "green"
+
+print(CarManager.all_cars)
