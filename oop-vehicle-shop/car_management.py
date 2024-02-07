@@ -246,6 +246,28 @@ class CarManager:
             return lst_result
 
     # Class methods
+    @classmethod
+    def format_service_list(cls, lst_services) :
+        """Formats the services list
+
+        Args:
+            lst_services List of services
+        Returns:
+            (string) Formatted list of services
+        """
+        str_service_list = ""
+
+        if len(lst_services) > 0 :
+            for int_index, str_service in enumerate(lst_services) :
+                str_service_list += f"{str_service.title()}"
+
+                if int_index < len(lst_services) - 1 :
+                    str_service_list += ", "
+        else:
+            str_service_list = "None"
+
+        return str_service_list
+
 
     @classmethod
     def display_menu(cls) :
@@ -304,16 +326,19 @@ class CarManager:
         print("\n---- View All Cars ----")
 
         for str_element in CarManager.all_cars :
-            str_service_list = ""
 
-            if len(str_element['services']) > 0 :
-                for int_index, str_service in enumerate(str_element['services']) :
-                    str_service_list += f"{str_service.title()}"
+            str_service_list = CarManager.format_service_list(str_element['services'])
 
-                    if int_index < len(str_element['services']) - 1 :
-                        str_service_list += ", "
-            else:
-                str_service_list = "None"
+            # str_service_list = ""
+
+            # if len(str_element['services']) > 0 :
+            #     for int_index, str_service in enumerate(str_element['services']) :
+            #         str_service_list += f"{str_service.title()}"
+
+            #         if int_index < len(str_element['services']) - 1 :
+            #             str_service_list += ", "
+            # else:
+            #     str_service_list = "None"
 
             print(f"ID: {str_element['id']} | \
 Make: {str_element['make'].title()} | \
@@ -394,4 +419,5 @@ car2 = CarManager("Dodge", "challenger", 1970, 79000, ['tune up'])
 car3 = CarManager("Chevrolet", "impala", 1995, 150000)
 
 
-CarManager.run_ui()
+# CarManager.run_ui()
+CarManager.menu_sel_view_all_cars()
