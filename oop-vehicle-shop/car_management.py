@@ -290,13 +290,34 @@ class CarManager:
     def menu_sel_add_car(cls) :
         """Selection: Add a car
         """
-        print("Add A Car")
+        print("\n---- Add A Car ----")
 
     @classmethod
     def menu_sel_view_all_cars(cls) :
         """Selection: View all cars
         """
-        print("View All Cars")
+        print("\n---- View All Cars ----")
+
+        for str_element in CarManager.all_cars :
+            str_service_list = ""
+
+            if len(str_element['services']) > 0 :
+                for int_index, str_service in enumerate(str_element['services']) :
+                    str_service_list += f"{str_service.title()}"
+
+                    if int_index < len(str_element['services']) - 1 :
+                        str_service_list += ", "
+            else:
+                str_service_list = "None"
+
+            print(f"ID: {str_element['id']} | \
+Make: {str_element['make'].title()} | \
+Model: {str_element['model'].title()} | \
+Year: {str_element['year']} | \
+Mileage: {str_element['mileage']} | \
+Services: {str_service_list}")
+
+        input("\nPress any key to continue...")
 
     @classmethod
     def menu_sel_view_total_car_num(cls) :
@@ -315,19 +336,19 @@ class CarManager:
     def menu_sel_see_car_details(cls) :
         """Selection: See a car's details
         """
-        print("See A Car's Details")
+        print("\n---- See A Car's Details ----")
 
     @classmethod
     def menu_sel_service_car(cls) :
         """Selection: Service a car
         """
-        print("Service A Car")
+        print("\n---- Service A Car ----")
 
     @classmethod
     def menu_sel_update_mileage(cls) :
         """Selection: Update Mileage
         """
-        print("Update Mileage")
+        print("\n---- Update Mileage ----")
 
     @classmethod
     def run_ui(cls) :
@@ -361,5 +382,11 @@ class CarManager:
 
         print("Goodbye!")
 
-CarManager.run_ui()
+
 #CarManager.menu_sel_add_car()
+car1 = CarManager("Jeep", "Wrangler", 2002, 30000, ['oil change', 'tire rotation'])
+car2 = CarManager("Dodge", "challenger", 1970, 79000, ['tune up'])
+car3 = CarManager("Chevrolet", "impala", 1995, 150000)
+
+
+CarManager.run_ui()
