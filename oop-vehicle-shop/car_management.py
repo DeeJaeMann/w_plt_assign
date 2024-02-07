@@ -21,10 +21,12 @@ class CarManager:
 
 
     def __str__(self) :
-        return f"ID: {self._id} Make: {self.make} Model: {self.model} Year: {self.year} Mileage: {self._mileage} Services: {self._services}"
+        return f"ID: {self.id} Make: {self.make} Model: {self.model} Year: {self.year} Mileage: {self._mileage} Services: {self._services}"
     
     def __repr__(self) :
         return str(self)
+
+    # Getters and Setters
 
     @property
     def id(self) :
@@ -33,7 +35,7 @@ class CarManager:
         Args:
             None
         Returns:
-            self._id - Integer of car ID
+            (integer) Integer of car ID
         """
         return self._id
     
@@ -44,7 +46,7 @@ class CarManager:
         Args:
             None
         Returns
-            self._make - Make property of car
+            (string) Make property of car
         """
         return self._make
     
@@ -68,7 +70,7 @@ class CarManager:
         Args:
             None
         Returns:
-            self._model - Model property of car
+            (string) Model property of car 
         """
         return self._model
     
@@ -92,7 +94,7 @@ class CarManager:
         Args:
             None
         Returns:
-            self._year - Year property of car
+            (integer) Year property of car 
         """
         return self._year
 
@@ -110,8 +112,22 @@ class CarManager:
 
             self.update_cars(self._id)
         else :
-            print("Warning: Year must be an int!  Property not updated!")
+            print("Warning: Year must be an integer!  Property not updated!")
 
+    @property
+    def mileage(self) :
+        """Getter: Returns the mileage property
+
+        Args:
+            None
+        Returns:
+            (integer) Mileage of car 
+        """
+        return self._mileage
+
+    # End Getters and Setters
+
+    # Helper methods
 
     def add_car(self) :
         """Helper Method: Adds new car to all_cars
@@ -148,13 +164,15 @@ class CarManager:
                 "services" : self._services
                 }
 
+    # End Helper Methods
+
     def display_menu(self) :
         """Displays the menu
 
         Args:
             None
         Returns:
-            Menu display
+            (string) Menu display
         """
         print("\n----  WELCOME  ----\n\
 1. Add a car\n\
@@ -185,16 +203,18 @@ car2 = CarManager("Chevy", "Camaro", 1969, 90000)
 
 
 print(CarManager.all_cars)
+
+print(car1.mileage)
 # # print(CarManager.total_cars)
 
-car1.make = "Jeep"
+# car1.make = "Jeep"
 
-print(CarManager.all_cars)
+# print(CarManager.all_cars)
 
-car1.model = "Firebird"
+# car1.model = "Firebird"
 
-print(CarManager.all_cars)
+# print(CarManager.all_cars)
 
-car1.year = "green"
+# car1.year = "green"
 
-print(CarManager.all_cars)
+# print(CarManager.all_cars)
