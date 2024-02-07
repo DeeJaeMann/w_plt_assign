@@ -301,6 +301,11 @@ class CarManager:
     @classmethod
     def menu_sel_view_total_car_num(cls) :
         """Selection: View total number of cars
+
+        Args:
+            None
+        Returns:
+            None
         """
         print("\n---- View Total Number of Cars ----")
         print(f"Total Cars: {CarManager.total_cars}\n")
