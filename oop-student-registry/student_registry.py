@@ -2,6 +2,7 @@
 import re
 
 class Student:
+    """Student class for use in school registry"""
     def __init__(self, name, age = 13, grade = "12th"):
         self._name = name
         self._age = age
@@ -10,6 +11,11 @@ class Student:
     @property
     def get_name(self) :
         """Gets the name property
+
+        Args:
+            none
+        Returns:
+            Student name
         """
         return self._name
     
@@ -20,7 +26,7 @@ class Student:
         Args:
             name Name to set
         Returns:
-            MMessage only on fail
+            Message only on fail
         """
         re_pattern = "^[A-Z][a-zA-Z]{2,}$"
         matches = re.match(re_pattern, f"{name}")
@@ -31,13 +37,23 @@ class Student:
 
     @property
     def get_age(self) :
-        """
+        """Gets the student age
+
+        Args:
+            none
+        Returns:
+            Student age
         """
         return self._age
 
     @get_age.setter
     def set_age(self, age) :
-        """
+        """Sets student age if greater than 11 or less than 18
+
+        Args:
+            age Age as an integer
+        Returns:
+            Message only on fail
         """
         if type(age) == int and 11 < age < 18 :
             self._age = age
@@ -46,13 +62,23 @@ class Student:
 
     @property
     def get_grade(self) :
-        """
+        """Gets student grade
+
+        Args:
+            None
+        Returns:
+            Student grade as string
         """
         return self._grade
 
     @get_grade.setter
     def set_grade(self, grade) :
-        """
+        """Sets student grade if within 9-12th as a string
+
+        Args:
+            grade Student grade as string - including 'th'
+        Returns:
+            Message on fail
         """
         re_pattern = r'^1?\dth$'
         matches = re.match(re_pattern, f'{grade}')
