@@ -6,6 +6,16 @@ class CarManager:
     all_cars = []
     # Total number of cars
     total_cars = 0
+
+    TPLE_MENU = (
+        "Add a car",
+        "View all cars",
+        "View total number of cars",
+        "See a car's details",
+        "Service a car",
+        "Update mileage",
+        "Quit",
+    )
     
     # Constructor
     def __init__(self, make, model, year, mileage, services = []) :
@@ -168,7 +178,6 @@ class CarManager:
 
     # End Getters and Setters
 
-    # Helper methods
 
     def add_car(self) :
         """Helper Method: Adds new car to all_cars
@@ -236,9 +245,12 @@ class CarManager:
             lst_result.append(lst_services)
             return lst_result
 
-    # End Helper Methods
+    # Class methods
 
-    def display_menu(self) :
+
+
+    @classmethod
+    def display_menu(cls) :
         """Displays the menu
 
         Args:
@@ -246,44 +258,51 @@ class CarManager:
         Returns:
             (string) Menu display
         """
-        return "\n----  WELCOME  ----\n\
-1. Add a car\n\
-2. View all cars\n\
-3. View total number of cars\n\
-4. See a car's details\n\
-5. Service a car\n\
-6. Update mileage\n\
-7. Quit\n"
+        str_result = "\n---- WELCOME ----\n"
 
-    def get_input(self) :
-        pass
+        for int_index, str_option in enumerate(CarManager.TPLE_MENU) :
+            str_result += f"{int_index + 1}. {str_option}\n"
 
+        return str_result
+    
+    @classmethod
+    def get_input(cls) :
+        """Displays the input prompt and receives user input
 
+        Args:
+            None
+        Returns:
 
-car1 = CarManager("Dodge", "Charger", 1978, 50000, "oil change")
+        """
+        bl_valid = False
 
-# print(car1)
+        while bl_valid == False :
+            int_result = input("Please enter a menu option: ")
 
-# car1.make = "Jeep"
+            if int_result.isnumeric() :
+                int_result = int(int_result)
+                if 0 < int_result < 8 :
+                    # We have a valid option
+                    return int_result
 
-# print(car1)
+            print("Please enter a valid option from the menu.")
+            print(CarManager.display_menu())
 
-car2 = CarManager("Chevy", "Camaro", 1969, 90000)
+    @classmethod
+    def run_ui(cls) :
+        """Runs the user interface
 
-# print(car2)
+        Args:
+            None
+        Returns:
+            None
+        """
+        int_selection = 0
 
+        while not(int_selection == 7) :
+            print(CarManager.display_menu())
+            int_selection = CarManager.get_input()
 
+        print("Goodbye!")
 
-print(CarManager.all_cars)
-
-car2.services = "tire"
-
-print(CarManager.all_cars)
-
-# print(car1.mileage)
-
-# car1.mileage = "steve"
-
-# print(car1.mileage)
-
-# print(CarManager.all_cars)
+CarManager.run_ui()
