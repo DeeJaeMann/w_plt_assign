@@ -153,6 +153,19 @@ class CarManager:
         """
         return self._services
 
+    @services.setter
+    def services(self, lst_services) :
+        """Setter: Sets the services property
+
+        Args:
+            lst_services List of services to set property to
+        Returns:
+            None
+        """
+        self._services = self.convert_services(lst_services)
+
+        self.update_cars(self._id)
+
     # End Getters and Setters
 
     # Helper methods
@@ -200,6 +213,7 @@ class CarManager:
         Returns:
             (list) Validated and converted list
         """
+        #TODO: Verify how much validation/processing logic is needed
         if lst_services == [] :
             # No conversion necessary
             return lst_services
@@ -209,6 +223,15 @@ class CarManager:
         else : 
             # Create empty list
             lst_result = []
+            
+            # Check if our input is a string
+            if type(lst_services) == str :
+                # Force to lowercase
+                lst_services = lst_services.lower()
+            else :
+                # Convert to string and lowercase
+                lst_services = f"{lst_services}".lower()
+
             # Append our input to our list
             lst_result.append(lst_services)
             return lst_result
@@ -250,6 +273,10 @@ car2 = CarManager("Chevy", "Camaro", 1969, 90000)
 # print(car2)
 
 
+
+print(CarManager.all_cars)
+
+car2.services = "tire"
 
 print(CarManager.all_cars)
 
