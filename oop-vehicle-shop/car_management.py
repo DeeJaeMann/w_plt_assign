@@ -12,7 +12,7 @@ class CarManager:
         self._id = CarManager.total_cars
         self.make = make
         self.model = model
-        self._year = year
+        self.year = year
         self._mileage = mileage
         self._services = services
 
@@ -21,14 +21,14 @@ class CarManager:
 
 
     def __str__(self) :
-        return f"ID: {self._id} Make: {self.make} Model: {self.model} Year: {self._year} Mileage: {self._mileage} Services: {self._services}"
+        return f"ID: {self._id} Make: {self.make} Model: {self.model} Year: {self.year} Mileage: {self._mileage} Services: {self._services}"
     
     def __repr__(self) :
         return str(self)
 
     @property
     def id(self) :
-        """Getter: Returns the ID of the car
+        """Getter: Returns the ID of the car (Note: This is automatically assigned. No setter)
 
         Args:
             None
@@ -53,7 +53,7 @@ class CarManager:
         """Setter: Sets the make of the car
 
         Args:
-            make - String to change the make into
+            str_make - String to change the make into
         Returns:
             None
         """
@@ -75,11 +75,37 @@ class CarManager:
         """Setter: Sets the model of the car
 
         Args:
-            model - String to change the model into
+            str_model - String to change the model into
         Returns:
             None
         """
         self._model = str(str_model).lower()
+
+    @property
+    def year(self) :
+        """Getter: Returns the year of the car
+
+        Args:
+            None
+        Returns:
+            self._year - Year property of car
+        """
+        return self._year
+
+    @year.setter
+    def year(self, int_year) :
+        """Setter: Sets the year of the car
+
+        Args:
+            int_year - Int to change the year into
+        Returns:
+            None
+        """
+        if type(int_year) == int:
+            self._year = int_year
+        else :
+            print("Year must be an int!  Property not updated!")
+
 
     def add_car(self) :
         """Helper Method: Adds new car to all_cars
@@ -93,7 +119,7 @@ class CarManager:
                 "id" : self.id,
                 "make" : self.make,
                 "model" : self.model,
-                "year" : self._year,
+                "year" : self.year,
                 "mileage" : self._mileage,
                 "services" : self._services
                 })
