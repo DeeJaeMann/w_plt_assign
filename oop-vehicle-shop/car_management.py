@@ -168,6 +168,7 @@ class CarManager:
 
     # End Getters and Setters
 
+
     def add_car(self) :
         """Helper Method: Adds new car to all_cars
 
@@ -202,7 +203,39 @@ class CarManager:
                 "mileage" : self._mileage,
                 "services" : self._services
                 }
-        
+
+    def convert_services(self, lst_services) :
+        """Validates input is a list and converts if necessary
+
+        Args:
+            lst_services - Input to validate and convert
+        Returns:
+            (list) Validated and converted list
+        """
+        #TODO: Verify how much validation/processing logic is needed
+        if lst_services == [] :
+            # No conversion necessary
+            return lst_services
+        elif type(lst_services) == list :
+            # No conversion necessary
+            return lst_services
+        else : 
+            # Create empty list
+            lst_result = []
+            
+            # Check if our input is a string
+            if type(lst_services) == str :
+                # Force to lowercase
+                lst_services = lst_services.lower()
+            else :
+                # Convert to string and lowercase
+                lst_services = f"{lst_services}".lower()
+
+            # Append our input to our list
+            lst_result.append(lst_services)
+            return lst_result
+
+
 car1 = CarManager("Jeep", "Wrangler", 2002, 30000, ['oil change', 'tire rotation'])
 car2 = CarManager("Dodge", "challenger", 1970, 79000, ['tune up'])
 car3 = CarManager("Chevrolet", "impala", 1995, 150000)

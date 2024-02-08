@@ -112,7 +112,8 @@ def menu_sel_add_car() :
     str_model_in = input("Model: ")
     str_make_in = input("Make: ")
     str_year_in = input("Year: ")
-    # str_mileage_in
+    str_mileage_in = input("Mileage: ")
+    str_services_in = input("Services: ")
 
 def menu_sel_view_all_cars() :
     """Selection: View all cars
@@ -125,6 +126,7 @@ def menu_sel_view_all_cars() :
     print("\n---- View All Cars ----")
 
     # print(f"{CarManager.all_cars}")
+    # Better output for all cars
     print(format_all_car_output())
     
 def menu_sel_view_total_car_num() :
