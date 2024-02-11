@@ -38,14 +38,16 @@ sub display_welcome {
 }
 
 sub process_dirs {
-    # If the name is .git and it is a directory
 
+    # If the name is .git and it is a directory
     if($_ eq '.git' and -d $_) {
-        # Geth the full path of the directory
+
+        # Get the full path of the directory
         my $path = $File::Find::name;
 
         # If the path is not the same as the current directory
         if($path ne "$dir/.git") {
+
             # Let the user know we found a dir
             printf("Found and removed $path\n");
 
@@ -54,6 +56,7 @@ sub process_dirs {
 
             # Skip further processing of this directory
             $File::Find::prune = 1;
+            # Append to the count
             $dir_count += 1;
         }
     }
