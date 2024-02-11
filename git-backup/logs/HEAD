@@ -1,0 +1,63 @@
+0000000000000000000000000000000000000000 c24d42cf936157aabdf2bdeff6d197cc5ef784ee Dee J. Mann <dee.j.mann@hotmail.com> 1707095536 -0500	commit (initial): first commit
+c24d42cf936157aabdf2bdeff6d197cc5ef784ee 0000000000000000000000000000000000000000 Dee J. Mann <dee.j.mann@hotmail.com> 1707095536 -0500	Branch: renamed refs/heads/main to refs/heads/main
+c24d42cf936157aabdf2bdeff6d197cc5ef784ee c24d42cf936157aabdf2bdeff6d197cc5ef784ee Dee J. Mann <dee.j.mann@hotmail.com> 1707095536 -0500	Branch: renamed refs/heads/main to refs/heads/main
+c24d42cf936157aabdf2bdeff6d197cc5ef784ee c24d42cf936157aabdf2bdeff6d197cc5ef784ee Dee J. Mann <dee.j.mann@hotmail.com> 1707095580 -0500	reset: moving to HEAD
+c24d42cf936157aabdf2bdeff6d197cc5ef784ee 0739d21466219fb782ede17446e3a91d5ebf7066 Dee J. Mann <dee.j.mann@hotmail.com> 1707095615 -0500	commit: Migrating repos into one
+0739d21466219fb782ede17446e3a91d5ebf7066 1ed64d13ec4327000152026c6157440cd14a18ec Dee J. Mann <dee.j.mann@hotmail.com> 1707096300 -0500	commit: Corrected README
+1ed64d13ec4327000152026c6157440cd14a18ec 379837531b97dff7b5aa3c89fa2cdc0f5c79e1a5 Dee J. Mann <dee.j.mann@hotmail.com> 1707096885 -0500	commit: Added armstrongNumber() framework
+379837531b97dff7b5aa3c89fa2cdc0f5c79e1a5 3d79c071bd7255b32ccd9aa0fcfbcbcc316cf8f3 Dee J. Mann <dee.j.mann@hotmail.com> 1707097139 -0500	commit: Corrected function name to findArmstrongNumbers
+3d79c071bd7255b32ccd9aa0fcfbcbcc316cf8f3 6e84f9a043ce3a786261744eb91537720c2d9db0 Dee J. Mann <dee.j.mann@hotmail.com> 1707098647 -0500	commit: Added logic to process number into digits
+6e84f9a043ce3a786261744eb91537720c2d9db0 dc8212c967bbd6b0718cb1b8fbd13dd4da86bd95 Dee J. Mann <dee.j.mann@hotmail.com> 1707099275 -0500	commit: Added splitDigits - to separate digits into an array for processing
+dc8212c967bbd6b0718cb1b8fbd13dd4da86bd95 135ef38132bd366f899d6f1d3b4a747b638100ce Dee J. Mann <dee.j.mann@hotmail.com> 1707100744 -0500	commit: Added calculateNumber
+135ef38132bd366f899d6f1d3b4a747b638100ce 4b35ad44b6bab8587b8f1b611fc1a91f2ca849d5 Dee J. Mann <dee.j.mann@hotmail.com> 1707101836 -0500	commit: Copied testing logic from Spec file.
+4b35ad44b6bab8587b8f1b611fc1a91f2ca849d5 d3f532e1b01da67045b98fee903ca3ff1feed1bd Dee J. Mann <dee.j.mann@hotmail.com> 1707103072 -0500	commit: Attempted to check if module was loading correctly
+d3f532e1b01da67045b98fee903ca3ff1feed1bd 4f977606e8a84a1e285084f81a54ff84f1157863 Dee J. Mann <dee.j.mann@hotmail.com> 1707137141 -0500	commit: Added ShaBang
+4f977606e8a84a1e285084f81a54ff84f1157863 6781b859aeafd44566e3f2370bf2e3ba0d0d1163 Dee J. Mann <dee.j.mann@hotmail.com> 1707137782 -0500	commit: Added split_digits and related logic
+6781b859aeafd44566e3f2370bf2e3ba0d0d1163 7290c5570829e00b1a3980807f9caa49e2b35ef3 Dee J. Mann <dee.j.mann@hotmail.com> 1707138418 -0500	commit: Added final logic for find_armstrong_numbers
+7290c5570829e00b1a3980807f9caa49e2b35ef3 e14d4e4fd3ab74f4420ec34cb336763259fad6a3 Dee J. Mann <dee.j.mann@hotmail.com> 1707138577 -0500	commit: Added comments
+e14d4e4fd3ab74f4420ec34cb336763259fad6a3 68bf85e7d1e62f035c582a5c9300d013100f679b Dee J. Mann <dee.j.mann@hotmail.com> 1707142662 -0500	commit: Trying to diagnose Spec file
+68bf85e7d1e62f035c582a5c9300d013100f679b d8d7d12ca90b316d7dedc271c88acdc820ca3793 Dee J. Mann <dee.j.mann@hotmail.com> 1707161210 -0500	commit: Added Prompt Engineering Tic-Tac-Toe
+d8d7d12ca90b316d7dedc271c88acdc820ca3793 381e712f03bd6f14352ec17a8d0a123d87300190 Dee J. Mann <dee.j.mann@hotmail.com> 1707161383 -0500	commit: Added tic-tac-toe.py
+381e712f03bd6f14352ec17a8d0a123d87300190 0bd751312cf74f39fb1c474e5e443a6f94e83043 Dee J. Mann <dee.j.mann@hotmail.com> 1707162283 -0500	commit: Added play_game framework
+0bd751312cf74f39fb1c474e5e443a6f94e83043 14496f98a9889e5dee35cdd2b338b5d2ebe2dc19 Dee J. Mann <dee.j.mann@hotmail.com> 1707164202 -0500	commit: Added display_board
+14496f98a9889e5dee35cdd2b338b5d2ebe2dc19 67a84111d8cc7ee2c5e1714d18d16028a2e7892f Dee J. Mann <dee.j.mann@hotmail.com> 1707170733 -0500	commit: Added More functionality. Logic errors present
+67a84111d8cc7ee2c5e1714d18d16028a2e7892f d88bc6cf154832b0c33cf21b2d5b44db3fe738d0 Dee J. Mann <dee.j.mann@hotmail.com> 1707173073 -0500	commit: Continued to investigate logic errors
+d88bc6cf154832b0c33cf21b2d5b44db3fe738d0 23e0aaae91f24bf21c36794bfb07af54a78f0bce Dee J. Mann <dee.j.mann@hotmail.com> 1707237649 -0500	commit: Added Week 2 Day 2 assignments
+23e0aaae91f24bf21c36794bfb07af54a78f0bce b717387b45525c84640c6e23187241e5c500f63f Dee J. Mann <dee.j.mann@hotmail.com> 1707238586 -0500	commit: Added class, users and print statements to User.py
+b717387b45525c84640c6e23187241e5c500f63f 3f55699236f90a7b8a27e6b9a7a7fa69e223c3d4 Dee J. Mann <dee.j.mann@hotmail.com> 1707239608 -0500	commit: Expanded User class
+3f55699236f90a7b8a27e6b9a7a7fa69e223c3d4 15647a4a1810e1c7aeb0a2150b682f78944913f5 Dee J. Mann <dee.j.mann@hotmail.com> 1707240525 -0500	commit: Updated output string method
+15647a4a1810e1c7aeb0a2150b682f78944913f5 b9613e1959ed85bd45928cab6b987d921bfdcd81 Dee J. Mann <dee.j.mann@hotmail.com> 1707240616 -0500	commit: Updated output string method
+b9613e1959ed85bd45928cab6b987d921bfdcd81 68a0d4d0bbff355bb67d26a55c26182927eb7915 Dee J. Mann <dee.j.mann@hotmail.com> 1707241794 -0500	commit: Modified class
+68a0d4d0bbff355bb67d26a55c26182927eb7915 2853aa151770132b868217024b8e41349aaf8515 Dee J. Mann <dee.j.mann@hotmail.com> 1707248844 -0500	commit: Added ShaBang
+2853aa151770132b868217024b8e41349aaf8515 4612c3e7206af0c270ede84a50a6f0db6be22b0d Dee J. Mann <dee.j.mann@hotmail.com> 1707248866 -0500	commit: Added ShaBang
+4612c3e7206af0c270ede84a50a6f0db6be22b0d 0c73e9005e8d6c80bd064f47a7d1f0317c7a6ed3 Dee J. Mann <dee.j.mann@hotmail.com> 1707251666 -0500	commit: Added ShaBang
+0c73e9005e8d6c80bd064f47a7d1f0317c7a6ed3 2a57c6d3f1c828aeb7618a2430e33ee9ec516a10 Dee J. Mann <dee.j.mann@hotmail.com> 1707251686 -0500	commit: Added txt file
+2a57c6d3f1c828aeb7618a2430e33ee9ec516a10 b7a9659273bef3d96d06019e50d0ada273633979 Dee J. Mann <dee.j.mann@hotmail.com> 1707252632 -0500	commit: Added getters and setters
+b7a9659273bef3d96d06019e50d0ada273633979 e6c8d6d295a06fdc45bf33a704b132718ddd7928 Dee J. Mann <dee.j.mann@hotmail.com> 1707263465 -0500	commit: Added logic to class
+e6c8d6d295a06fdc45bf33a704b132718ddd7928 9f1d312f27df3456af2ea1cb00894bd0130ae4c3 Dee J. Mann <dee.j.mann@hotmail.com> 1707266421 -0500	commit: Completed DocStrings for Class, Getters and Setters
+9f1d312f27df3456af2ea1cb00894bd0130ae4c3 79dd4263306ab5dfbe6c63a05860e1dc15bcc39f Dee J. Mann <dee.j.mann@hotmail.com> 1707270713 -0500	commit: Added advance method
+79dd4263306ab5dfbe6c63a05860e1dc15bcc39f b2fc2888576c99ba260ae5e6971e5b5b93b3a37d Dee J. Mann <dee.j.mann@hotmail.com> 1707275021 -0500	commit: Added test cases and additional advance logic
+b2fc2888576c99ba260ae5e6971e5b5b93b3a37d e1b1203f006956b6c0ef9dcf4fbd7b8371e9607a Dee J. Mann <dee.j.mann@hotmail.com> 1707275088 -0500	commit: Cleaned up files
+e1b1203f006956b6c0ef9dcf4fbd7b8371e9607a 5256b12e201fdef6fbfc507528b7b730fc8c110e Dee J. Mann <dee.j.mann@hotmail.com> 1707325097 -0500	commit: Added Class Attributes, Constructor and display_menu
+5256b12e201fdef6fbfc507528b7b730fc8c110e 9d4d2a1a84879eed2a429d8549ee4853ad4eb8fa Dee J. Mann <dee.j.mann@hotmail.com> 1707325243 -0500	commit: Added get_input method
+9d4d2a1a84879eed2a429d8549ee4853ad4eb8fa c754d2e283780a47a63c5102bf435db27e24e93f Dee J. Mann <dee.j.mann@hotmail.com> 1707333314 -0500	commit: Added ID logic and all_cars data structure
+c754d2e283780a47a63c5102bf435db27e24e93f f712fdb10fb0ef661f4a4e5bfa6d804c172d7230 Dee J. Mann <dee.j.mann@hotmail.com> 1707334894 -0500	commit: Added Getters and Setters for Make and Model
+f712fdb10fb0ef661f4a4e5bfa6d804c172d7230 5b829ef1537ea77da70d06ff357f8f4261d07311 Dee J. Mann <dee.j.mann@hotmail.com> 1707335289 -0500	commit: Added year getter and setter. Updated add and update cars
+5b829ef1537ea77da70d06ff357f8f4261d07311 834620a492b2883e3a9b9b52011af126c88c65a4 Dee J. Mann <dee.j.mann@hotmail.com> 1707336314 -0500	commit: Added update_cars logic and implemented in setters
+834620a492b2883e3a9b9b52011af126c88c65a4 5fea54d977256be25687d282ab8427c327e9a7cf Dee J. Mann <dee.j.mann@hotmail.com> 1707336768 -0500	commit: Added mileage getter
+5fea54d977256be25687d282ab8427c327e9a7cf 63b696ac1cc591ae56b69a518040d2c552e1918d Dee J. Mann <dee.j.mann@hotmail.com> 1707338361 -0500	commit: Added convert_services
+63b696ac1cc591ae56b69a518040d2c552e1918d 3bd310af20f62931c1a055c6f2d97c468bdad8bc Dee J. Mann <dee.j.mann@hotmail.com> 1707339075 -0500	commit: Added string conversions to convert_services
+3bd310af20f62931c1a055c6f2d97c468bdad8bc 84da2167d809cdce03656b89b86110ffdef2a4be Dee J. Mann <dee.j.mann@hotmail.com> 1707340837 -0500	commit: Added get_input and run_ui
+84da2167d809cdce03656b89b86110ffdef2a4be dd1dd0bdfb26c05a715fb0bd9d89c847d5a9033b Dee J. Mann <dee.j.mann@hotmail.com> 1707341577 -0500	commit: Added menu options logic and methods
+dd1dd0bdfb26c05a715fb0bd9d89c847d5a9033b e68863998ede674963d4db298512a9fe192ca1d6 Dee J. Mann <dee.j.mann@hotmail.com> 1707341757 -0500	commit: Added View Total Cars Menu logic
+e68863998ede674963d4db298512a9fe192ca1d6 17f27a156ded06059500f558d31990afed1bd2df Dee J. Mann <dee.j.mann@hotmail.com> 1707341786 -0500	commit: Added View Total Cars Menu logic
+17f27a156ded06059500f558d31990afed1bd2df 454be10391a912b5e9ad5ff503efdc92e5523fa3 Dee J. Mann <dee.j.mann@hotmail.com> 1707343150 -0500	commit: Added logic for menu_sel_view_all_cars
+454be10391a912b5e9ad5ff503efdc92e5523fa3 b68e67c9fa40bb36dcdf7b1dec473c377d7142ae Dee J. Mann <dee.j.mann@hotmail.com> 1707343192 -0500	commit: Added logic for menu_sel_view_all_cars
+b68e67c9fa40bb36dcdf7b1dec473c377d7142ae 41865c3eda386444b0312b98b36ad1f4c72b5027 Dee J. Mann <dee.j.mann@hotmail.com> 1707344407 -0500	commit: Created seperate logic for service list generation
+41865c3eda386444b0312b98b36ad1f4c72b5027 63d3aedb85ffa9a616ea510a2e1d701b5c194a3d Dee J. Mann <dee.j.mann@hotmail.com> 1707401253 -0500	commit: Seperated terminal logic for main.py
+63d3aedb85ffa9a616ea510a2e1d701b5c194a3d 1c80aaccbac879539bdb8aba2495734484e425e6 Dee J. Mann <dee.j.mann@hotmail.com> 1707401528 -0500	commit: Replaced convert_services
+1c80aaccbac879539bdb8aba2495734484e425e6 1b104bb1434dbd30968e1711797567b31d04c326 Dee J. Mann <dee.j.mann@hotmail.com> 1707420890 -0500	commit: Added ZooManager
+1b104bb1434dbd30968e1711797567b31d04c326 debe6afbef09b67d0efe9abf557f5a86ea4abe20 Dee J. Mann <dee.j.mann@hotmail.com> 1707421192 -0500	commit: Added boggle
+debe6afbef09b67d0efe9abf557f5a86ea4abe20 5a1748344b1226c7c1a4a0d36e841b30ec6c53d2 Dee J. Mann <dee.j.mann@hotmail.com> 1707427954 -0500	commit: Updated repo
+5a1748344b1226c7c1a4a0d36e841b30ec6c53d2 2f8dcc5e703aa04cd81647a4fc7726c1f424400f Dee J. Mann <dee.j.mann@hotmail.com> 1707428231 -0500	commit: Added boggle
+2f8dcc5e703aa04cd81647a4fc7726c1f424400f 56b2d93f82715703e98ac5c3d87091ae34221cd7 Dee J. Mann <dee.j.mann@hotmail.com> 1707691462 -0500	commit: Added logic for guessing_game
