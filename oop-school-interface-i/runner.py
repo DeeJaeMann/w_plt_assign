@@ -9,3 +9,4 @@ school = School('Ridgemont High')
 print(school.name)
 
 print(school.students)
+print(school.staff)

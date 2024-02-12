@@ -17,6 +17,7 @@ class School:
         self.name = name
         self.staff = []
         self.students = Student.all_students()
+        self.staff = Staff.all_staff()
 
 
 
