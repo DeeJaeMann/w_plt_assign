@@ -7,3 +7,5 @@ from classes.staff import Staff
 school = School('Ridgemont High') 
 
 print(school.name)
+
+print(school.students)

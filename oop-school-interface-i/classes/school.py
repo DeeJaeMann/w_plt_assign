@@ -1,5 +1,8 @@
 #!/usr/bin/env python3.12
 """Classes for school module"""
+from classes.student import Student
+from classes.staff import Staff
+from classes.person import Person
 
 class School:
     """School class"""
@@ -13,7 +16,7 @@ class School:
         """
         self.name = name
         self.staff = []
-        self.students = []
+        self.students = Student.all_students()
 
 
 

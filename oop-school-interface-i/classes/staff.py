@@ -16,5 +16,11 @@ class Staff(Person):
         Returns:
             NOne
         """
-        self.employee_id - employee_id
-        super().__init__(name, age, role, password)
+        self.employee_id = employee_id
+        dct_this_person = {
+            'name':name,
+            'age':age,
+            'role':role,
+            'password':password,
+        }
+        super().__init__(**dct_this_person)
