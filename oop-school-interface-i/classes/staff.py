@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.12
 """Classes for staff module"""
-from person import Person
+from classes.person import Person
 
 class Staff(Person):
     """Staff class"""
-    def __init__(self, name, age, role, employee_id, password) :
+    def __init__(self, name=None, age=None, role=None, employee_id=None, password=None) :
         """Creates instance of Staff class
         
         Args:

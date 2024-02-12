@@ -3,7 +3,7 @@
 
 class Person:
     """Person class"""
-    def __init__(self, name, age, role, password) :
+    def __init__(self, name=None, age=None, role=None, password=None) :
         """Creates instance of Person class
         
         Args:

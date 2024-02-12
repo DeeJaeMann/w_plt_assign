@@ -1,10 +1,10 @@
 #!/usr/bin/env python3.12
 """Classes for student module"""
-from person import Person
+from classes.person import Person
 
 class Student(Person):
     """Student class"""
-    def __init__(self, name, age, school_id, password) :
+    def __init__(self, name=None, age=None, school_id=None, password=None) :
         """Creates instance of Student class
         
         Args:
