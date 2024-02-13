@@ -8,7 +8,7 @@ Update tests
 
 This is from the assignment this refactoring is based on
 
-# Algorithm Drill Linear Search
+## Algorithm Drill Linear Search
 
 ## Summary
 
