@@ -1,6 +1,8 @@
 # Refactoring linear search into binary search
 
+Refactor linear search to binary search
 
+Update tests
 
 
 
