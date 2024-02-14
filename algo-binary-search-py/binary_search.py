@@ -39,6 +39,25 @@ def binary_search_global(value_to_find, array_to_search_through):
 
     # return lst_result
     # End linear global search code
+
+    # ["b", "a", "n", "a", "n", "a", "s"]
+    #   L              M              R
+    # Issues:  if it finds on the 1st, it doesn't know if it has all matches
+    #  needs to run on sorted list
+    # ["a", "a", "a", "b", "n", "n", "s"] (sorted)
+    #   L              M              R
+    #  Will check Left
+    # ["a", "a", "a", "b", "n", "n", "s"] (sorted)
+    #   L    M         R
+    #  Will find a match here, do we continue to pass through?  Which way do we go?
+    # ["a", "a", "a", "b", "n", "n", "s"] (sorted) 
+    #  L/M   R    *
+    #  If we go left, we'll miss the occurance on the right (index 2)
+    #
+    #  Do we enter linear to check each element at this point?
+    #   What is the most effective method to reset left and right limits?
+    #
+    #  What alternatives are there to try to maintain speed?
     pass
 
 print(binary_search("a", ["a", "b", "c"]))
