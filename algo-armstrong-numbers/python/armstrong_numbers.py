@@ -5,12 +5,14 @@ import re
 
 #Begin Helper Functions
 
-'''
-    This function splits the digits of a number into an array
-    @param {int} int_num Number to be split
-    @returns Array of digits from int_num
-'''
 def split_digits(int_num) :
+    """This function splits the digits of a number into a list
+
+    Args:
+        int_num (int) Number to be split
+    Returns:
+        (list) List of digits from int_num
+    """
     lst_result = []
 
     # Iterate through the number (as a string) and match each digit
@@ -19,13 +21,14 @@ def split_digits(int_num) :
 
     return lst_result
 
-''' 
-    This function calculates the total of each digit of a list calculated to the
-    power of the list length
-    @param {list} lst_digits List of digits to calculate
-    @returns Calculated total of digits to the power of the length of the list
-'''
 def calculate_number(lst_digits) :
+    """This function calculates the total of each digit of a list calculated to the power of the list length
+
+    Args:
+        lst_digits (list) List of digits to calculate
+    Returns:
+        (int) Calculated total of digits to the power of the length of the list
+    """
     int_total = 0
     lst_subtotals = []
 
@@ -33,8 +36,11 @@ def calculate_number(lst_digits) :
     for int_digit in lst_digits :
         int_this_subtotal = pow(int(int_digit), len(lst_digits))
 
+        # Add this subtotal to the list of subtotals
         lst_subtotals.append(int_this_subtotal)
 
+    # Calculate the sum of all of the subtotals
+    # TODO: Can this use Reduce?
     for int_digit in lst_subtotals :
         int_total += int_digit
 
@@ -42,22 +48,27 @@ def calculate_number(lst_digits) :
 
 # End Helper Functions
 
-'''
-    This function accepts a range of numbrers as a list and returns the Armstrong Numbers
-    found in that list
-    @param {list} numbers List of a range of numbers to search
-    @returns List containing Armstrong Numbers found in the given list
-'''
 def find_armstrong_numbers(numbers):
+    """This function accepts a range of numbers as a list and returns the Armstrong Numbers found in that list
+
+    Args:
+        numbers - (list) A range of numbers to search
+    Returns:
+        (list) List containing Armstrong Numbers found in numbers
+    """
     lst_result = []
 
     for int_num in numbers :
+        # TODO: Why did I make this variable?
         int_this_num = int_num
 
+        # split each of the digits of this number into a list
         lst_this_num_digits = split_digits(int_this_num)
 
+        # Calculate the total of this digit to the power of the list length
         int_this_total = calculate_number(lst_this_num_digits)  
 
+        # Compare the previous total to the current number
         if int_this_total == int_this_num :
             lst_result.append(int_this_num)
     
