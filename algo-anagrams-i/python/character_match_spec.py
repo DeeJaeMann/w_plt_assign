@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.12
 from character_match import is_character_match, anagrams_for
 
 # Part 1
