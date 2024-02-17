@@ -27,8 +27,6 @@ def is_valid(str_input) :
     # else :
     #     print("No Match Found")
 
-
-
 is_valid("()")
 is_valid("())")
 is_valid("()()")
