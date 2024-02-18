@@ -1,6 +1,5 @@
 #!/usr/bin/env python3.12
 
-#bottle_song()
 
 def bottle_song(num):
 	 #= num
