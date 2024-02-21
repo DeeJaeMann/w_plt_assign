@@ -1,0 +1,42 @@
+body {
+    background-color: azure;
+}
+
+h1 {
+    font-weight: lighter;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: green;
+    margin: 2px;
+    padding: 2px;
+}
+
+.container, .header_container {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header_container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+}
+
+.list_block {
+    width: 25%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}

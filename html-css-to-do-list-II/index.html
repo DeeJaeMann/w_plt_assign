@@ -2,29 +2,46 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
         <title>To Do List</title>
     </head>
     <body>
         <header>
-            <h1>Practice To Do List</h1>
-            <p>This is a simple to do list demonstration</p>
+            <div class="header_container">
+                <h1 class="heading">Practice To Do List</h1>
+                <p class="heading">This is a simple to do list demonstration</p>
+            </div>
         </header>
         <main>
-            <div>
-                <p>Tasks:</p>
-                <ol>
-                    <li><strong>Something really important!</strong></li>
-                    <li><em>Something kinda important...</em></li>
-                    <li>Just another task</li>
-                </ol>
-            </div>
-            <div>
-                <p>And Now For Something Completely Random:</p>
-                <ul>
-                    <li>Knights who say 'Ni!'</li>
-                    <li>Merely a flesh wound!</li>
-                    <li>Nasty, Pointy Teeth!</li>
-                </ul>
+            <div class="container">
+                <div class="list_block">
+                    <div>
+                        <p>Tasks:</p>
+                    </div>
+                    <div>
+                        <form>
+                            <ol>
+                                <li><input type="checkbox" name="important"> <strong>Something really important!</strong></li>
+                                <li><input type="checkbox" name="kinda"> <em>Something kinda important...</em></li>
+                                <li><input type="checkbox" name="another"> Just another task</li>
+                            </ol>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+                <div class="list_block">
+                    <div>
+                        <p>And Now For Something Completely Random:</p>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Knights who say 'Ni!'</li>
+                            <li>Merely a flesh wound!</li>
+                            <li>Nasty, Pointy Teeth!</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
