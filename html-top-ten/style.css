@@ -1,1 +1,73 @@
 /* to show your CSS things, you'll likely need to use this file */
+
+body {
+    background-color: azure;
+}
+
+table {
+    width: 75%;
+}
+
+
+td {
+    width: 30%;
+    border: 2px solid black;
+}
+
+#header_container {
+    border-bottom: 2px solid slategray;
+}
+
+#main_container {
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+}
+
+#header_para {
+    margin-bottom: 10px;
+}
+
+#shadow_box {
+    margin: 15px;
+    border: 1px solid black;
+    box-shadow: 2px 4px 10px 4px blue;
+}
+
+#diff_blend_box {
+    display: flex;
+    mix-blend-mode: difference;
+    justify-content: center;
+}
+
+#blend_contrast {
+    background-color: yellow;
+}
+
+.red_box {
+    background-color: red;
+}
+
+.green_box {
+    background-color: green;
+}
+
+.blue_box {
+    background-color: blue;
+}
+
+.header_text {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table_content {
+    text-align: center;
+}
+
+.blend_text {
+    color: white;
+    padding: 0px 4px;
+}
