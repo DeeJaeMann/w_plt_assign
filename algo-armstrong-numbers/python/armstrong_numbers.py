@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.12
+#!/usr/bin/env python3
 import re
 
 # How can you make this more scalable and reusable later?
@@ -59,21 +59,19 @@ def find_armstrong_numbers(numbers):
     lst_result = []
 
     for int_num in numbers :
-        # TODO: Why did I make this variable?
-        int_this_num = int_num
 
         # split each of the digits of this number into a list
-        lst_this_num_digits = split_digits(int_this_num)
+        lst_this_num_digits = split_digits(int_num)
 
         # Calculate the total of this digit to the power of the list length
         int_this_total = calculate_number(lst_this_num_digits)  
 
         # Compare the previous total to the current number
-        if int_this_total == int_this_num :
-            lst_result.append(int_this_num)
+        if int_this_total == int_num :
+            lst_result.append(int_num)
     
     return lst_result
 
 
 
-#print(find_armstrong_numbers([5,371,333]))
+print(find_armstrong_numbers([5,371,333]))
