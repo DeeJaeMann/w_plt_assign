@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
-import regex
+import re
 
-# This is an experiment using another regex library which supports recursive matches
-# TODO: Figure out why the pattern is ignoring the outliers
 
 def is_valid(str_input) :
     """Checks input string and returns whether parentheses sets are valid or not
@@ -12,21 +10,19 @@ def is_valid(str_input) :
     Returns:
         (bool) True - Valid, False - Invalid
     """
+   
+    # Match all parentheses, brackets and braces using non-capture groups
+    lst_matches = re.findall(r"(?:\(|\))|(?:\[|\])|(?:\{|\})", str_input)
 
-    # regex_paren_pattern = r"\(.*\)"
-    # regex_brace_pattern = r"\{.*\}"
-    # regex_bracket_pattern = r"\[.*\]"
+    if len(lst_matches) % 2 != 0 :
+        return False
 
-    regex_pattern = r"\(([^()]*|(?R))*\)|\{([^{}]*|(?R))*\}|\[([^\[\]]*|(?R))*\]"
-    
-    match = regex.search(regex_pattern, str_input)
+    return True
 
-    print(match.groups())
-    # if match:
-    #     print(match.group())
-    # else :
-    #     print("No Match Found")
+    # print(lst_matches)
 
-is_valid("()")
-is_valid("())")
-is_valid("()()")
+
+
+print(is_valid("()"))
+print(is_valid("())"))
+print(is_valid("()()"))
