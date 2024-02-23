@@ -12,9 +12,12 @@ def is_valid(str_input) :
     """
    
     # Match all parentheses, brackets and braces using non-capture groups
+    # findall returns a list of all matches found
     lst_matches = re.findall(r"(?:\(|\))|(?:\[|\])|(?:\{|\})", str_input)
 
+    # check if the list is an even number
     if len(lst_matches) % 2 != 0 :
+        # it isn't, we don't have balanced sets
         return False
 
     return True
