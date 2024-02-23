@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.12
+#!/usr/bin/env python3
 def binary_search(value_to_find, array_to_search_through):
     # your code here
     
