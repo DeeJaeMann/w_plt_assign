@@ -33,13 +33,10 @@
   </section>
 
   <header>
-    <!-- <div id="logo">
+    <div id="logo">
       <img src="images/pied_piper_logo.png" alt="">
-    </div> -->
+    </div>
     <nav>
-      <div id="logo">
-        <img src="images/pied_piper_logo.png" alt="">
-      </div>
       <div class="nav-item">
         <a href="">The Box</a>
       </div>
