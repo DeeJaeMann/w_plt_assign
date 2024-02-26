@@ -6,7 +6,14 @@ let intAnswer = Math.floor(Math.random()*100)
 // answerTag = document.getElementById("answer")
 // answerTag.textContent = intAnswer
 
+const createHistoryItem = (guess) => {
+    let historyContainer = document.getElementById('historyContainer')
+    let li = document.createElement('li')
 
+    li.innerText = `${guess}`
+
+    historyContainer.appendChild(li)
+}
 
 const submitGuess = (event) => {
     event.preventDefault();
@@ -24,4 +31,6 @@ const submitGuess = (event) => {
     } else {
         resultTag.textContent = "Low!"
     }
+
+    createHistoryItem(myGuess)
 }

@@ -3,9 +3,42 @@ body {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 300;
   text-align: center;
+  background-color: azure;
 }
 
 h1 {
   font-weight: 400
 }
 
+ul {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containers {
+  width: 30%;
+  background-color: blue;
+}
+
+.spacers {
+  width: 30%;
+}
+
+#historyContainer, #result {
+  color: white;
+}
+
+#top {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+#bottom {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
