@@ -1,7 +1,7 @@
 // console.log("HELLO PAPA PLATOON!")
 // Your function(s) should go here that will interact with the webpage or DOM
 
-let intAnswer = Math.floor(Math.random()*100)
+let intAnswer = Math.floor(Math.random()*100) + 1
 
 // answerTag = document.getElementById("answer")
 // answerTag.textContent = intAnswer
