@@ -42,16 +42,48 @@ def display_home() :
     return str_response
 
 def get_this_subject(int_id) :
-    qry_subjects = Subjects.query.all()
+    """Queries the subjects table given a subject ID and returns the string of the subject
+    """
+    # This only selects the record that has a matching id to int_id
+    qry_subject = Subjects.query.filter_by(id = int_id)
 
-    for subject in qry_subjects :
-        if subject.id == int_id :
-            return subject.subject
+    # Create a list from the query
+    lst_subject = [str_this_subject.subject for str_this_subject in qry_subject]
+    # Return the first element of the list
+    return lst_subject[0]
+
+def get_this_teacher(int_id) :
+    """Queries the teachers table given a subject ID and returns the first and last name of the teacher
+    """
+    # This only selects the record that has a matching subject id to int_id
+    qry_teacher = Teachers.query.filter_by(subject = int_id)
+
+    # Create a list from the query, joining the first and last name fields
+    lst_teacher = [f"{str_this_teacher.first_name} {str_this_teacher.last_name}" for str_this_teacher in qry_teacher]
+
+    # Return the first element of the list
+    return lst_teacher[0]
+
+def get_these_students(int_id) :
+    """Queries the students table given a subject ID and returns a list of student first and last names
+    """
+    # This only selects the records that have matching subject ids to int_id
+    qry_students = Student.query.filter_by(subject = int_id)
+
+    # Creates a list from the query, joining the first and last name fields
+    lst_students = [f"{str_this_student.first_name} {str_this_student.last_name}" for str_this_student in qry_students]
+
+    # Return the list of students
+    return lst_students
 
 @app.route(f"{str_app_ep}students/")
 def get_students():
+    """Queries the students table and returns all student records
+    """
     qry_students = Student.query.all()
 
+    # Create a list from each record field
+    # uses get_this_subject to perform a query to retrieve the subject name from the subject.id
     lst_students = [
         {
             'id': student.id,
@@ -63,15 +95,52 @@ def get_students():
         for student in qry_students
     ]
 
+    # Return the formatted dictionary of student records
     return jsonify(lst_students)
 
 @app.route(f"{str_app_ep}teachers/")
 def get_teachers():
-    pass
+    """Queries the teachers table and returns all teacher records
+    """
+    qry_teachers = Teachers.query.all()
+
+    # Create a list from each record field
+    # uses get_this_subject to perform a query to retrieve the subject name from the subject.id
+    lst_teachers = [
+        {
+            'id': teacher.id,
+            'first_name': teacher.first_name,
+            'last_name': teacher.last_name,
+            'age': teacher.age,
+            'subject': get_this_subject(teacher.subject)
+        }
+        for teacher in qry_teachers
+    ]
+
+    # Return the formatted dictionary of teacher records
+    return jsonify(lst_teachers)
 
 @app.route(f"{str_app_ep}subjects/")
 def get_subjects():
-    pass
+    """Queries the subjects table and returns the subject record, matching teacher from teacher.subject and a list of students from student.subject
+    """
+    qry_subjects = Subjects.query.all()
+
+    # Create a list from each record field
+    # uses get_this_teacher to perform a query to retrieve the teacher record from the subject.id ~ teacher.subject
+    # uses get_these_students to perform a query to retrieve the list of student records from subject.id ~ student.subject
+    lst_subjects = [
+        {
+            'id': subject.id,
+            'subject': subject.subject,
+            'teacher': get_this_teacher(subject.id),
+            'students' : get_these_students(subject.id)
+        }
+        for subject in qry_subjects
+    ]
+
+    # Return the formatted dictionary of subject records
+    return jsonify(lst_subjects)
 
 
 if __name__ == '__main__' :
