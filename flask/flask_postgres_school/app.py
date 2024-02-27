@@ -12,7 +12,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg://deemann@localhost/
 
 db = SQLAlchemy(app)
 
+# DB objects
+
 class Student(db.Model):
+    """ For student table queries
+    """
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
@@ -20,6 +24,8 @@ class Student(db.Model):
     subject = db.Column(db.Integer)
 
 class Teachers(db.Model):
+    """ For teachers table queries
+    """
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
@@ -27,20 +33,12 @@ class Teachers(db.Model):
     subject = db.Column(db.Integer)
 
 class Subjects(db.Model):
+    """ For subjects table queries
+    """
     id = db.Column(db.Integer, primary_key=True)
     subject = db.Column(db.String)
 
-@app.route("/", methods=['GET'])
-def display_home() :
-    str_response = """
-<h1>Home</h1>
-<ul>
-<li><a href=\"/api/v1/students/\">Get Students</a>
-<li><a href=\"/api/v1/teachers/\">Get Teachers</a>
-<li><a href=\"/api/v1/subjects/\">Get Subjects</a>
-</ul>
-"""
-    return str_response
+# Helper functions
 
 def get_this_subject(int_id) :
     """Queries the subjects table given a subject ID and returns the string of the subject
@@ -76,6 +74,22 @@ def get_these_students(int_id) :
 
     # Return the list of students
     return lst_students
+
+# End points
+
+@app.route("/", methods=['GET'])
+def display_home() :
+    """Generates a 'pretty' home page of endpoint links for testing to see the data returned
+    """
+    str_response = """
+<h1>Home</h1>
+<ul>
+<li><a href=\"/api/v1/students/\">Get Students</a>
+<li><a href=\"/api/v1/teachers/\">Get Teachers</a>
+<li><a href=\"/api/v1/subjects/\">Get Subjects</a>
+</ul>
+"""
+    return str_response
 
 @app.route(f"{str_app_ep}students/")
 def get_students():
