@@ -132,7 +132,7 @@ def get_teachers():
             'first_name': teacher.first_name,
             'last_name': teacher.last_name,
             'age': teacher.age,
-            'class': {
+            'subject': {
                 'subject': get_this_subject(teacher.subject),
                 'students': get_these_students(teacher.subject)
             }
