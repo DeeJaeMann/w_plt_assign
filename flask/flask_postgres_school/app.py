@@ -91,7 +91,7 @@ def display_home() :
 """
     return str_response
 
-@app.route(f"{str_app_ep}students/")
+@app.route(f"{str_app_ep}students/", methods=['GET'])
 def get_students():
     """Queries the students table and returns all student records
     """
@@ -117,7 +117,7 @@ def get_students():
     # Return the formatted dictionary of student records
     return jsonify(lst_students)
 
-@app.route(f"{str_app_ep}teachers/")
+@app.route(f"{str_app_ep}teachers/", methods=['GET'])
 def get_teachers():
     """Queries the teachers table and returns all teacher records
     """
@@ -143,7 +143,7 @@ def get_teachers():
     # Return the formatted dictionary of teacher records
     return jsonify(lst_teachers)
 
-@app.route(f"{str_app_ep}subjects/")
+@app.route(f"{str_app_ep}subjects/", methods=['GET'])
 def get_subjects():
     """Queries the subjects table and returns the subject record, matching teacher from teacher.subject and a list of students from student.subject
     """
