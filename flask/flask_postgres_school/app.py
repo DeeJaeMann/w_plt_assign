@@ -47,7 +47,7 @@ def get_this_subject(int_id) :
     qry_subject = Subjects.query.filter_by(id = int_id)
 
     # Create a list from the query
-    lst_subject = [str_this_subject.subject for str_this_subject in qry_subject]
+    lst_subject = [this_subject.subject for this_subject in qry_subject]
     # Return the first element of the list
     return lst_subject[0]
 
@@ -58,7 +58,7 @@ def get_this_teacher(int_id) :
     qry_teacher = Teachers.query.filter_by(subject = int_id)
 
     # Create a list from the query, joining the first and last name fields
-    lst_teacher = [f"{str_this_teacher.first_name} {str_this_teacher.last_name}" for str_this_teacher in qry_teacher]
+    lst_teacher = [f"{this_teacher.first_name} {this_teacher.last_name}" for this_teacher in qry_teacher]
 
     # Return the first element of the list
     return lst_teacher[0]
@@ -70,7 +70,7 @@ def get_these_students(int_id) :
     qry_students = Student.query.filter_by(subject = int_id)
 
     # Creates a list from the query, joining the first and last name fields
-    lst_students = [f"{str_this_student.first_name} {str_this_student.last_name}" for str_this_student in qry_students]
+    lst_students = [f"{this_student.first_name} {this_student.last_name}" for this_student in qry_students]
 
     # Return the list of students
     return lst_students
