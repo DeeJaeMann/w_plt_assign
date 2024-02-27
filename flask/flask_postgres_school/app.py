@@ -3,6 +3,7 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
+# Default endpoint prefix
 str_app_ep = "/api/v1/"
 
 app = Flask(__name__)
