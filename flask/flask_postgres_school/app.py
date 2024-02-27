@@ -85,13 +85,17 @@ def get_students():
 
     # Create a list from each record field
     # uses get_this_subject to perform a query to retrieve the subject name from the subject.id
+    # uses get_this_teacher to perform a query to retrieve the teacher name from the subject.id
     lst_students = [
         {
             'id': student.id,
             'first_name': student.first_name,
             'last_name': student.last_name,
             'age': student.age,
-            'subject': get_this_subject(student.subject)
+            'class': {
+                'subject': get_this_subject(student.subject),
+                'teacher': get_this_teacher(student.subject)
+            }
         }
         for student in qry_students
     ]
@@ -107,13 +111,17 @@ def get_teachers():
 
     # Create a list from each record field
     # uses get_this_subject to perform a query to retrieve the subject name from the subject.id
+    # uses get_these_students to perform a query to retrieve the list of students from the subject.id
     lst_teachers = [
         {
             'id': teacher.id,
             'first_name': teacher.first_name,
             'last_name': teacher.last_name,
             'age': teacher.age,
-            'subject': get_this_subject(teacher.subject)
+            'class': {
+                'subject': get_this_subject(teacher.subject),
+                'students': get_these_students(teacher.subject)
+            }
         }
         for teacher in qry_teachers
     ]
