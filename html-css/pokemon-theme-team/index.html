@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" \>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" async defer></script>
+    <script src="./app.js" async defer></script>
+    <title>Pokemon Theme Team</title>
+</head>
+<body>
+    <header>
+        <div class="headerContainer">
+            <h1 id="teamHeading">Pokemon Team</h1>
+        </div>
+    </header>
+    <main>
+        <div class="mainContainer">
+            <div id="outerFormContainer"></div>
+                <div id="formContainer">
+                    <form onsubmit="generateTeam(event)">
+                        <button id="btnSubmit">Generate My Team!</button>
+                    </form>
+                </div>
+            <div id="outerDisplayContainer">
+                <div id="displayContainer">
+                    <div class="pokeContainer">
+                        <p id="nameOne" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgOne" class="pokeImg" alt="">
+                    </div>
+                    <div class="pokeContainer">
+                        <p id="nameTwo" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgTwo" class="pokeImg" alt="">
+                    </div>
+                    <div class="pokeContainer">
+                        <p id="nameThree" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgThree" class="pokeImg" alt="">
+                    </div>
+                    <div class="pokeContainer">
+                        <p id="nameFour" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgFour" class="pokeImg" alt="">
+                    </div>
+                    <div class="pokeContainer">
+                        <p id="nameFive" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgFive" class="pokeImg" alt="">
+                    </div>
+                    <div class="pokeContainer">
+                        <p id="nameSix" class="pokeName">Empty</p>
+                        <img src="blank.png" id="imgSix" class="pokeImg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
