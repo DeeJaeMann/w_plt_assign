@@ -1,0 +1,86 @@
+body {
+  background-color: azure;
+}
+
+.headerContainer, .mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContainer {
+  flex-direction: column;
+}
+
+#btnSubmit {
+  background-color: white;
+  border-radius: 10px;
+  color: orangered;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 15px 5px 5px 5px;
+  padding: 7px;
+}
+
+#outerFormContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(3, 3, 97);
+  border-top: 3px solid orangered;
+  border-left: 3px solid orangered;
+  border-right: 5px solid orangered;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  width: 75%;
+}
+
+#outerDisplayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#displayContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  background-color: rgb(3, 3, 97);
+  border-bottom: 5px solid orangered;
+  border-left: 3px solid orangered;
+  border-right: 5px solid orangered;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.pokeImg {
+  height: 150px;
+  margin: 0px 3px 7px 3px;
+  box-shadow: inset 0 0 15px silver;
+  border-radius: 30px;
+}
+
+.pokeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokeName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: silver;
+}
