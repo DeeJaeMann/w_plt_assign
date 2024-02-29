@@ -1,0 +1,9 @@
+#mainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgBtn {
+  padding-top: 50+px;
+}
