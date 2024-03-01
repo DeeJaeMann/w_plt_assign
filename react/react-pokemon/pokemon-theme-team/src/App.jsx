@@ -4,22 +4,26 @@ import './App.css'
 
 function App() {
 
+  // State?
   const setImage = (strId, strUrl) => {
     // Sets the provided image tag to the provided url
     const thisImage = document.getElementById(strId);
     thisImage.src = strUrl;
   }
 
+  // State?
   const setName = (strId, strName) => {
     // Sets the provided name tag to the provided name
     const thisName = document.getElementById(strId);
     thisName.innerText = strName;
   }
 
+  // State?
   const setHeading = (strType) => {
     // Changes the page heading to the selected pokemon type
 
     // Create a title from the provided type
+    //TODO: Move this to a helper function that can 
     const strTitle = `${strType.charAt(0).toUpperCase()}${strType.substring(1)}`
     const thisHeading = document.getElementById("teamHeading")
     thisHeading.innerText = `Pokemon Team: ${strTitle}`
@@ -46,51 +50,67 @@ function App() {
     try {
       event.preventDefault();
 
+      // This should move to an effect
+      // TODO: Move to effect - Get pokeTypes
       let typeArrayResponse = await axios.get('https://pokeapi.co/api/v2/type');
 
+      // State?
       let thisTypeArray = typeArrayResponse.data.results;
 
+      // State?
       let pokemonInType = 0;
 
+      // The reason I used a 'do - while' is to verify that there are elements in the 
+      // returned array.  Some pokemon types don't have any 'members' but the types
+      // are still returned.  You don't run into the blank array until you query
+      // the selected type.
+      // The loop uses whether pokemonInType has elements or not
       do {
         let randomTypeNum = getRandomId(thisTypeArray.length);
 
-        // This is odd behavior, why is this happening?
+        // Most likely the NaN is coming from unexpected results from the API
+        // It is an intermittent issue, however if we run into it we will restart
+        // the loop and get a new random number
+        // This is a patch to prevent the app from breaking
         if (isNaN(randomTypeNum)) { continue; }
 
-        console.log(`Type Random num ${randomTypeNum}`)
+        // Maybe this should be renamed?  Or rename the previous state of the array
         thisTypeArray = thisTypeArray[randomTypeNum];
 
-        console.log(`Type Array ${thisTypeArray}`)
-
+        // State?
         let thisTypeUrl = ""
 
+        // Verify if there is a url and assign it if there is
         if(thisTypeArray.url) {
           thisTypeUrl = thisTypeArray.url;
         } else {
           continue;
         }
 
+        // Move to an effect
+        //TODO: Determine which effect this goes to
         let thisTypeSelectionResponse = await axios.get(thisTypeUrl);
 
-      // verify that there are pokemon in the type
 
         pokemonInType = thisTypeSelectionResponse.data.pokemon;
+
+        // verify that there are pokemon in the type, if there are non or the type
+        // is not a number, iterate through the loop to get different data
+        // the !isNan() part may not be needed anymore due to the validation
+        // above
       } while (pokemonInType < 1 && !isNaN(pokemonInType));
 
 
       let thisTypeName = thisTypeArray.name;
-      if(pokemonInType.length === 0) {
-        console.log(`No pokemon in type ${thisTypeName}`)
-      }
 
       let arrPokemonSelected = [];
 
       for(let intIndex = 0; intIndex < 6; intIndex++) {
         const thisRandNum = getRandomId(pokemonInType.length);
-        console.log(`Type: ${thisTypeName} Random Num: ${thisRandNum} Length: ${pokemonInType.length}`)
         const thisPokemon = pokemonInType[thisRandNum];
 
+// This can be a helper function
+//TODO: Move select/case to helper function that returns array with 2 elements
         let strName = "name";
         let strImg = "img";
 
@@ -120,6 +140,9 @@ function App() {
             strImg += "Six";
         }
 
+// end of id helper function
+
+// State variable?
         let objPokemonSelected = {
           'name': thisPokemon.pokemon.name,
           'url': thisPokemon.pokemon.url,
@@ -127,16 +150,16 @@ function App() {
           'image_tag': strImg
         };
 
+// This should be the result of an effect
         objPokemonSelected.image = await getPokemonImage(objPokemonSelected.url);
 
 
-
+// This should be in state?
         arrPokemonSelected.push(objPokemonSelected);
       }
 
       setHeading(thisTypeName);
       for(let thisPoke of arrPokemonSelected) {
-        console.log(`Loop ${thisPoke} img ${thisPoke.image} in ${thisPoke.image_tag} PokeUrl ${thisPoke.url}`)
         setImage(thisPoke.image_tag, thisPoke.image);
         setName(thisPoke.name_tag, thisPoke.name);
       }
