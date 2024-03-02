@@ -1,6 +1,5 @@
-import { useState } from 'react';
 
-function InputForm({guessedLetters, newGuessInput, processNewGuessInput, validateNewGuess, count}) {
+function InputForm({newGuessInput, processNewGuessInput, validateNewGuess, count}) {
 
     return (
         <>

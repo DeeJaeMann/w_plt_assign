@@ -44,7 +44,7 @@ function App() {
     event.preventDefault();
 
     // RegEx pattern to test for letters
-    const reLetters = /[a-z]/;
+    const reLetters = /[a-z]/i;
 
     // Test if our input is a letter
     if(reLetters.test(newGuessInput)) {
@@ -61,12 +61,12 @@ function App() {
             // Add this guess to guessed letters
             // console.log(`Adding Letter ${newGuessInput}`)
             setCount((count) => count + 1)
-            setGuessedLetters([...guessedLetters, newGuessInput]);
+            setGuessedLetters([...guessedLetters, newGuessInput.toLowerCase()]);
             // console.log(`Guessed Letters are: ${guessedLetters}`)
             // Reset input
             setNewGuessInput("")
             // checkLetters();
-            setLettersDisplay(checkLetters)
+            // setLettersDisplay(checkLetters)
         }
     } else {
         // Something other than a letter was entered
