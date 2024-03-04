@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import PuzzleWord from './PuzzleWord.jsx';
 import InputForm from './InputForm.jsx';
 import MissedGuesses from './MissedGuesses.jsx';
+import Winner from './Winner.jsx';
 import wordsData from './data/words.json';
 import './App.css';
 
@@ -90,6 +91,17 @@ function App() {
     <>
       <div className="mainContainer">
         <h1 className="headingText">Hangman</h1>
+        <div>
+          <Winner 
+          puzzle={puzzle}
+          setPuzzle={setPuzzle}
+          getRandomWord={getRandomWord}
+          setGuessedLetters={setGuessedLetters}
+          lettersDisplay={lettersDisplay}
+          setLettersDisplay={setLettersDisplay}
+          checkLetters={checkLetters}
+          />
+        </div>
         <div className="puzzleContainer">
           <PuzzleWord 
           puzzle={puzzle}
@@ -111,6 +123,7 @@ function App() {
           guessedLetters={guessedLetters}
           />
         </div>
+ 
       </div>
     </>
   )
