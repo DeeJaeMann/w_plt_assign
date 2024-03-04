@@ -93,7 +93,6 @@ function App() {
         <h1 className="headingText">Hangman</h1>
         <div>
           <Winner 
-          puzzle={puzzle}
           setPuzzle={setPuzzle}
           getRandomWord={getRandomWord}
           setGuessedLetters={setGuessedLetters}

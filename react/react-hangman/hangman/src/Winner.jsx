@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 
 
 
-function Winner({puzzle, setPuzzle, setGuessedLetters, getRandomWord, lettersDisplay, setLettersDisplay, checkLetters}) {
+function Winner({setPuzzle, setGuessedLetters, getRandomWord, lettersDisplay, setLettersDisplay, checkLetters}) {
     const [show, setShow] = useState(false);
 
     // console.log("Winner Component Called")
@@ -38,7 +38,7 @@ function Winner({puzzle, setPuzzle, setGuessedLetters, getRandomWord, lettersDis
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>You Win!</Modal.Title>
+                <Modal.Title>Winner!</Modal.Title>
             </Modal.Header>
             <Modal.Body>You Win!</Modal.Body>
             <Modal.Footer>
