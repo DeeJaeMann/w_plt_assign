@@ -6,10 +6,11 @@ function MissedGuesses ({puzzle, guessedLetters}) {
     let missedGuesses = guessedLetters.join("")
     // replace all letters found in the answer with a blank space
     missedGuesses = missedGuesses.replace(rePuzzle, "")
+    missedGuesses = missedGuesses.replace(/(?<=\w)(?=\w)/g, " ");
 
     return (
         <>
-            <p>Other Letters Guessed: {missedGuesses}</p>
+            <p>Incorrect Guesses: {missedGuesses}</p>
         </>
     );
 

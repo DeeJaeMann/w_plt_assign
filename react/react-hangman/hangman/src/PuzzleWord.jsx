@@ -7,8 +7,8 @@ function PuzzleWord ({puzzle, lettersDisplay}) {
 
     return (
         <>
-            <p>Answer: {puzzle}</p>
-            <p>Output: {lettersDisplay}</p>
+            {/* <p>Answer: {puzzle}</p> */}
+            <h2 className="puzzleText">Puzzle: {lettersDisplay}</h2>
 
         </>
     )

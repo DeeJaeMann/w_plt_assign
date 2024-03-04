@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import PuzzleWord from './PuzzleWord.jsx';
 import InputForm from './InputForm.jsx';
 import MissedGuesses from './MissedGuesses.jsx';
@@ -14,7 +14,7 @@ function App() {
   // Generates a random word from the length of wordsData to set as the answer
   let getRandomWord = () => wordsData[Math.floor(Math.random() * wordsData.length)];
 
-  const checkLetters = () => {
+  const checkLetters = useCallback(() => {
     // Build a reverse pattern from the guessed letters
     // console.log(`Guessed Letters: ${guessedLetters}`)
     const reNotGuessedLetters = new RegExp(`[^${guessedLetters.join("")}]`, "g");
@@ -28,7 +28,7 @@ function App() {
     console.log(`Check Letters: ${newString}`)
     return(newString);
 
-  }
+  })
 
   const [puzzle, setPuzzle] = useState(getRandomWord);
   // This could be moved into PuzzleWord
@@ -61,7 +61,7 @@ function App() {
             // Add this guess to guessed letters
             // console.log(`Adding Letter ${newGuessInput}`)
             setCount((count) => count + 1)
-            setGuessedLetters([...guessedLetters, newGuessInput.toLowerCase()]);
+            setGuessedLetters([...guessedLetters, newGuessInput.toLowerCase()].sort());
             // console.log(`Guessed Letters are: ${guessedLetters}`)
             // Reset input
             setNewGuessInput("")
@@ -88,27 +88,29 @@ function App() {
   // Add component to display incorrect guesses
   return (
     <>
-      <h1>Hangman</h1>
-      <div>
-        <PuzzleWord 
-        puzzle={puzzle}
-        lettersDisplay={lettersDisplay}
-        />
-      </div>
-      <div>
-        <InputForm 
-        guessedLetters={guessedLetters}
-        validateNewGuess={validateNewGuess}
-        newGuessInput={newGuessInput}
-        processNewGuessInput={processNewGuessInput}
-        count={count}
-        />
-      </div>
-      <div>
-        <MissedGuesses
-        puzzle={puzzle}
-        guessedLetters={guessedLetters}
-        />
+      <div className="mainContainer">
+        <h1 className="headingText">Hangman</h1>
+        <div className="puzzleContainer">
+          <PuzzleWord 
+          puzzle={puzzle}
+          lettersDisplay={lettersDisplay}
+          />
+        </div>
+        <div className="inputContainer">
+          <InputForm 
+          guessedLetters={guessedLetters}
+          validateNewGuess={validateNewGuess}
+          newGuessInput={newGuessInput}
+          processNewGuessInput={processNewGuessInput}
+          count={count}
+          />
+        </div>
+        <div className="missedContainer">
+          <MissedGuesses
+          puzzle={puzzle}
+          guessedLetters={guessedLetters}
+          />
+        </div>
       </div>
     </>
   )

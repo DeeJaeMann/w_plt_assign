@@ -1,0 +1,55 @@
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.puzzleContainer {
+    display: flex;
+    background-color: cornflowerblue;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.inputContainer {
+    display: flex;
+    background-color: cornflowerblue;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.missedContainer {
+    display: flex;
+    background-color: cornflowerblue;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.headingText {
+    font-size: 3em;
+}
+.puzzleText {
+    padding: 1em;
+}
+
+#guessInput {
+    background-color: lightblue;
+    color: white;
+    font-weight: bold;
+    padding: .3em;
+    margin-bottom: 1em;
+}
+
+#btnSubmit {
+    background-color: peru;
+    border-radius: 15px;
+    padding: 3px;
+}
