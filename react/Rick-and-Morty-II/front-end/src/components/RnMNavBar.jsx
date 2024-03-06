@@ -29,6 +29,11 @@ function RnMNavBar () {
                             Characters
                         </Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link as={Link} to="/smurfs" title="Error Page">
+                            Error Page Test
+                        </Nav.Link>
+                    </Nav.Item>
                 </Container>
             </Navbar>
         </>
