@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import RnMCard from '../components/RnMCard';
 
 function CharactersPage() {
     /*
@@ -11,27 +12,26 @@ function CharactersPage() {
     // This is an array of character objects
     const [arrCharacterObj, setArrCharacterObj] = useState([]);
 
- 
+    // Call the API to populate arrCharacterObj
     useEffect(() => {
         const getCharacters = async () => {
             try {
                 // Initialize variables for the do-while loop
                 let intPageCount = 1;
-                let boolNextPage = true;
+                // For safety, assume we have no more pages.  The loop will correct this
+                let boolNextPage = false;
 
                 // Use a do-while loop to iterate through the API pages to populate the characters into an array of objects
-                // I am using a do-while because this loop is designed to run at least once
+                // I am using a do-while because this loop is designed to run at least once through an unknown amount of pages
+                // This is designed to continue to work if the amount of pages changes in the future
                 do {
                     // Request all character data from the API
                     const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${intPageCount}`);
-                    
-                    // Check if there is a next page, this is our loop condition
-                    await response.data.info.next ? boolNextPage = true : boolNextPage = false
 
                     const arrTheseChars = await response.data.results;
                     // Map each array element into an object
                     arrTheseChars.map((char) => {
-                        const thisObj = {
+                        const objThisChar = {
                             'id': char.id,
                             'name': char.name,
                             'status': char.status,
@@ -44,9 +44,13 @@ function CharactersPage() {
 
                         }
                         // Add the object to the arrCharacterObj array
-                        setArrCharacterObj([...arrCharacterObj, thisObj])
+                        setArrCharacterObj([...arrCharacterObj, objThisChar])
                     })
-                    
+
+                    // Check if there is a next page, this is our loop condition
+                    await response.data.info.next ? boolNextPage = true : boolNextPage = false
+
+                    console.log(`Page: ${intPageCount}`)
                     // Incriment page count
                     intPageCount++;
                 
@@ -60,9 +64,7 @@ function CharactersPage() {
         };
 
         getCharacters();
-        // console.log(`After getCharacters() ${arrCharacterObj}`)
     }, []);
-
 
 
     return (
@@ -70,7 +72,22 @@ function CharactersPage() {
             <div className="container-fluid">
                 <div className="text-center">
                     <h2>The Characters</h2>
-                    <p></p>
+                </div>
+                <div>
+                    {arrCharacterObj.map((char, i) =>
+                    <div key={i}>
+                    <RnMCard 
+                        key={i}
+                        intID={char.id}
+                        imgSrc={char.image}
+                        strName={char.name}
+                        strStatus={char.status}
+                        strSpecies={char.species}
+                        strType={char.type}
+                        strGender={char.gender}
+                        strOrigin={char.origin.name}
+                        strLocation={char.location.name}
+                    / > </div>)}
                 </div>
             </div>
         </>
