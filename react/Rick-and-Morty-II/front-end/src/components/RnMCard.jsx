@@ -1,4 +1,6 @@
+import { CardText } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import ListGroup from "react-bootstrap/ListGroup";
 
 function RnMCard({key, 
     intID,
@@ -13,19 +15,21 @@ function RnMCard({key,
     }) {
     return(
 
-            <Card className="flex-row">
+            <Card className="flex-row" style={{ width: "18rem"}}>
                 <Card.Img src={imgSrc} key={key}/>
                 <Card.Body>
                     <Card.Title>{strName}</Card.Title>
-                    <Card.Text>
-                        ID: {intID}<br />
-                        Status: {strStatus}<br />
-                        Species: {strSpecies} {strType}<br />
-                        Gender: {strGender}<br />
-                        Origin: {strOrigin}<br />
-                        Location: {strLocation}
-                    </Card.Text>
                 </Card.Body>
+                <CardText>
+                <ListGroup className="list-group-flush">
+                    <ListGroup.Item>Status: {strStatus}</ListGroup.Item>
+                    <ListGroup.Item>Species: {strSpecies} {strType}</ListGroup.Item>
+                    <ListGroup.Item>Gender: {strGender}</ListGroup.Item>
+                    <ListGroup.Item>Origin: {strOrigin}</ListGroup.Item>
+                    <ListGroup.Item>Location: {strLocation}</ListGroup.Item>
+                </ListGroup>
+                </CardText>
+
             </Card>
 
     )

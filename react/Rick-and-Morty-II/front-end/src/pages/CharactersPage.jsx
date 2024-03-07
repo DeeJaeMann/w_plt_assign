@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useLoaderData } from 'react-router-dom';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import RnMCard from '../components/RnMCard';
+import getCharacters from '../lib/getCharacters';
 
 function CharactersPage() {
     /*
@@ -10,72 +13,44 @@ function CharactersPage() {
             https://rickandmortyapi.com/
      */
     // This is an array of character objects
-    const [arrCharacterObj, setArrCharacterObj] = useState([]);
+    const data = useLoaderData();
+    const [arrCharacterObj, setArrCharacterObj] = useState(data);
+
+    console.log(arrCharacterObj)
+    console.log(arrCharacterObj[0].name)
+    // console.log("Loader Data", data)
+    // setArrCharacterObj(data)
 
     // Call the API to populate arrCharacterObj
-    useEffect(() => {
-        const getCharacters = async () => {
-            try {
-                // Initialize variables for the do-while loop
-                let intPageCount = 1;
-                // For safety, assume we have no more pages.  The loop will correct this
-                let boolNextPage = false;
+    // This works now
+    // useEffect(() => {
+    //     // setArrCharacterObj(getCharacters());
+    //     getCharacters().then(res =>{
+    //         setArrCharacterObj(res)
+    //     }).catch(error => {
+    //         console.error(error)
+    //     })
+    // }, []);
 
-                // Use a do-while loop to iterate through the API pages to populate the characters into an array of objects
-                // I am using a do-while because this loop is designed to run at least once through an unknown amount of pages
-                // This is designed to continue to work if the amount of pages changes in the future
-                do {
-                    // Request all character data from the API
-                    const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${intPageCount}`);
-
-                    const arrTheseChars = await response.data.results;
-                    // Map each array element into an object
-                    arrTheseChars.map((char) => {
-                        const objThisChar = {
-                            'id': char.id,
-                            'name': char.name,
-                            'status': char.status,
-                            'type': char.type,
-                            'gender': char.gender,
-                            'origin': char.origin,
-                            'location': char.location,
-                            'image': char.image,
-                            'url': char.url
-
-                        }
-                        // Add the object to the arrCharacterObj array
-                        setArrCharacterObj([...arrCharacterObj, objThisChar])
-                    })
-
-                    // Check if there is a next page, this is our loop condition
-                    await response.data.info.next ? boolNextPage = true : boolNextPage = false
-
-                    console.log(`Page: ${intPageCount}`)
-                    // Incriment page count
-                    intPageCount++;
-                
-                // Continue the loop until we have no next page
-                } while (boolNextPage);
-                
-                // console.log(response.data);
-            } catch (error) {
-                console.error(`An error occured: ${error}`);
-            }
-        };
-
-        getCharacters();
-    }, []);
-
-
+ 
     return (
         <>
-            <div className="container-fluid">
-                <div className="text-center">
+            <Container className="container-fluid">
+                <Container className="text-center">
                     <h2>The Characters</h2>
-                </div>
-                <div>
-                    {arrCharacterObj.map((char, i) =>
-                    <div key={i}>
+                </Container>
+                <Container fluid>
+                    <Row className="justify-content-center">
+                        <p>List</p>
+                        <ul>
+                            {/* {renderLine()} */}
+                            {arrCharacterObj.map((char, i) => <li key={i}>Name:{char.name}</li>)}
+                            <li>testing</li>
+                            {/* <li>{arrCharacterObj[1].name}</li> */}
+                            {/* Length: {arrCharacterObj.length} */}
+                        </ul>
+                        {/* <p>Bottom of list Length {arrCharacterObj.length}</p> */}
+                    {/* {arrCharacterObj.map((char, i) => {
                     <RnMCard 
                         key={i}
                         intID={char.id}
@@ -87,9 +62,10 @@ function CharactersPage() {
                         strGender={char.gender}
                         strOrigin={char.origin.name}
                         strLocation={char.location.name}
-                    / > </div>)}
-                </div>
-            </div>
+                    / > }) } */}
+                    </Row>
+                </Container>
+            </Container>
         </>
     );
 }
