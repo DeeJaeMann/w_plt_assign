@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';  // useEffect removed, using useLoaderData instead
 import { useLoaderData } from 'react-router-dom';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import RnMCard from '../components/RnMCard';
-import getCharacters from '../lib/getCharacters';
+// import getCharacters from '../lib/getCharacters';  // Not needed here anymore, using useLoaderData instead of useEffect
 
 function CharactersPage() {
     /*
@@ -13,13 +13,11 @@ function CharactersPage() {
             https://rickandmortyapi.com/
      */
     // This is an array of character objects
-    const data = useLoaderData();
-    const [arrCharacterObj, setArrCharacterObj] = useState(data);
+    const arrCharacterData = useLoaderData();
+    const [arrCharacterObj, setArrCharacterObj] = useState(arrCharacterData);
 
     console.log(arrCharacterObj)
     console.log(arrCharacterObj[0].name)
-    // console.log("Loader Data", data)
-    // setArrCharacterObj(data)
 
     // Call the API to populate arrCharacterObj
     // This works now
