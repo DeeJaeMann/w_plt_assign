@@ -15,20 +15,42 @@ function CharactersPage() {
     useEffect(() => {
         const getCharacters = async () => {
             try {
+                // Initialize variables for the do-while loop
                 let intPageCount = 1;
                 let boolNextPage = true;
 
+                // Use a do-while loop to iterate through the API pages to populate the characters into an array of objects
+                // I am using a do-while because this loop is designed to run at least once
                 do {
                     // Request all character data from the API
                     const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${intPageCount}`);
-                    // Check if there is a next page
-                    response.data.info.next ? boolNextPage = true : boolNextPage = false
+                    
+                    // Check if there is a next page, this is our loop condition
+                    await response.data.info.next ? boolNextPage = true : boolNextPage = false
 
-                    const arrTheseChars = response.data.results;
-                    // console.log(arrTheseChars)
+                    const arrTheseChars = await response.data.results;
+                    // Map each array element into an object
+                    arrTheseChars.map((char) => {
+                        const thisObj = {
+                            'id': char.id,
+                            'name': char.name,
+                            'status': char.status,
+                            'type': char.type,
+                            'gender': char.gender,
+                            'origin': char.origin,
+                            'location': char.location,
+                            'image': char.image,
+                            'url': char.url
 
+                        }
+                        // Add the object to the arrCharacterObj array
+                        setArrCharacterObj([...arrCharacterObj, thisObj])
+                    })
+                    
+                    // Incriment page count
                     intPageCount++;
-                    setArrCharacterObj(await [...arrCharacterObj, arrTheseChars])
+                
+                // Continue the loop until we have no next page
                 } while (boolNextPage);
                 
                 // console.log(response.data);
@@ -38,7 +60,7 @@ function CharactersPage() {
         };
 
         getCharacters();
-        console.log(`After getCharacters() ${arrCharacterObj}`)
+        // console.log(`After getCharacters() ${arrCharacterObj}`)
     }, []);
 
 
@@ -48,6 +70,7 @@ function CharactersPage() {
             <div className="container-fluid">
                 <div className="text-center">
                     <h2>The Characters</h2>
+                    <p></p>
                 </div>
             </div>
         </>
