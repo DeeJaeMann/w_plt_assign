@@ -40,9 +40,9 @@ const CharactersPage = () => {
         <>
             <Container className="container-fluid">
                 <Container className="text-center tw-bg-purple-600">
-                    <h2 className="m-0 text-light">The Characters</h2>
+                    <h2 className="m-0 py-2 text-light">The Characters</h2>
                 </Container>
-                <Container fluid className="">
+                <Container fluid className="py-2 tw-bg-purple-600 rounded-bottom">
                     <Row className="justify-content-between" xs={1} sm={1} md={1} lg={2}>
                     {arrCharacterObj.map((char, i) =>
                     <Container key={i} className="tw-bg-purple-600">

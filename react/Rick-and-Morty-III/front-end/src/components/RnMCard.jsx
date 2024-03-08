@@ -1,9 +1,12 @@
 import { CardText } from 'react-bootstrap';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from "react-bootstrap/ListGroup";
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
+
+//TODO: Use conditional rendering to render a more detailed card
+//TODO: Use conditional rendering to show/hide details button
 
 const RnMCard = ({ 
     intID,
@@ -38,7 +41,7 @@ const RnMCard = ({
                         <ListGroup.Item>Origin: {strOrigin}</ListGroup.Item>
                         <ListGroup.Item>Location: {strLocation}</ListGroup.Item>
                     </ListGroup>
-                    <Button onClick={processButtonClick} variant="primary">See Details</Button>
+                    <Button onClick={processButtonClick} variant="primary my-2">See Details</Button>
                     </CardText>
                     </Card.Body>
                 </Card>
