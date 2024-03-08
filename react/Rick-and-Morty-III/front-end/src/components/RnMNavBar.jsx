@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
 
-function RnMNavBar () {
+const RnMNavBar = () => {
     return (
         <>
             <Navbar expand="lg" className="tw-bg-purple-300 border border-secondary rounded-bottom sticky-top">

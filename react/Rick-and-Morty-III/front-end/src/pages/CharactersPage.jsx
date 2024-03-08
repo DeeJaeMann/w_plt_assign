@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import RnMCard from '../components/RnMCard';
 // import getCharacters from '../lib/getCharacters';  // Not needed here anymore, using useLoaderData instead of useEffect
 
-function CharactersPage() {
+const CharactersPage = () => {
     /*
         Should render a BootStrap Card Component
             Display image and info for identified character

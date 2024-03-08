@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from "react-bootstrap/ListGroup";
 import Col from 'react-bootstrap/Col';
 
-function RnMCard({ 
+const RnMCard = ({ 
     intID,
     imgSrc, 
     strName,
@@ -13,7 +13,7 @@ function RnMCard({
     strGender,
     strOrigin,
     strLocation 
-    }) {
+    }) => {
     return(
 
         <Col className="tw-bg-purple-600">
