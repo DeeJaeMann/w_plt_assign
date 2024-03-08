@@ -34,11 +34,11 @@ function CharactersPage() {
     return (
         <>
             <Container className="container-fluid">
-                <Container className="text-center">
-                    <h2>The Characters</h2>
+                <Container className="text-center tw-bg-purple-600">
+                    <h2 className="m-0 text-light">The Characters</h2>
                 </Container>
-                <Container fluid>
-                    <Row className="justify-content-space-between" xs={1} md={3} lg={4}>
+                <Container fluid className="">
+                    <Row className="justify-content-between" xs={1} sm={1} md={1} lg={2}>
                     {arrCharacterObj.map((char, i) =>
                     <RnMCard key={i}
                         intID={char.id}

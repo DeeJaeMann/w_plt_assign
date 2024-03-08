@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function RnMNavBar () {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-secondary border border-secondary rounded-bottom">
+            <Navbar expand="lg" className="tw-bg-purple-300 border border-secondary rounded-bottom sticky-top">
                 <Container className="d-flex align-items-start m-0">
                     <Navbar.Brand as={Link} to="/" className="bg-dark text-white p-2 rounded">
                         <img
