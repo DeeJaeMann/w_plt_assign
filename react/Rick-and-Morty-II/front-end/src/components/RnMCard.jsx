@@ -2,7 +2,7 @@ import { CardText } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ListGroup from "react-bootstrap/ListGroup";
 
-function RnMCard({key, 
+function RnMCard({ 
     intID,
     imgSrc, 
     strName,
@@ -15,11 +15,10 @@ function RnMCard({key,
     }) {
     return(
 
-            <Card className="flex-row" style={{ width: "18rem"}}>
-                <Card.Img src={imgSrc} key={key}/>
+            <Card key={intID} className="flex-row m-2" >
+                <Card.Img src={imgSrc} className="p-2"/>
                 <Card.Body>
                     <Card.Title>{strName}</Card.Title>
-                </Card.Body>
                 <CardText>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>Status: {strStatus}</ListGroup.Item>
@@ -29,9 +28,8 @@ function RnMCard({key,
                     <ListGroup.Item>Location: {strLocation}</ListGroup.Item>
                 </ListGroup>
                 </CardText>
-
+                </Card.Body>
             </Card>
-
     )
 }
 

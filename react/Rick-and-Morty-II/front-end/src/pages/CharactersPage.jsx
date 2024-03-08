@@ -16,8 +16,8 @@ function CharactersPage() {
     const arrCharacterData = useLoaderData();
     const [arrCharacterObj, setArrCharacterObj] = useState(arrCharacterData);
 
-    console.log(arrCharacterObj)
-    console.log(arrCharacterObj[0].name)
+    // console.log(arrCharacterObj)
+    // console.log(arrCharacterObj[0].name)
 
     // Call the API to populate arrCharacterObj
     // This works now
@@ -38,19 +38,9 @@ function CharactersPage() {
                     <h2>The Characters</h2>
                 </Container>
                 <Container fluid>
-                    <Row className="justify-content-center">
-                        <p>List</p>
-                        <ul>
-                            {/* {renderLine()} */}
-                            {arrCharacterObj.map((char, i) => <li key={i}>Name:{char.name}</li>)}
-                            <li>testing</li>
-                            {/* <li>{arrCharacterObj[1].name}</li> */}
-                            {/* Length: {arrCharacterObj.length} */}
-                        </ul>
-                        {/* <p>Bottom of list Length {arrCharacterObj.length}</p> */}
-                    {/* {arrCharacterObj.map((char, i) => {
-                    <RnMCard 
-                        key={i}
+                    <Row className="justify-content-space-between" xs={1} md={3} lg={4}>
+                    {arrCharacterObj.map((char, i) =>
+                    <RnMCard key={i}
                         intID={char.id}
                         imgSrc={char.image}
                         strName={char.name}
@@ -60,7 +50,7 @@ function CharactersPage() {
                         strGender={char.gender}
                         strOrigin={char.origin.name}
                         strLocation={char.location.name}
-                    / > }) } */}
+                    / > ) }
                     </Row>
                 </Container>
             </Container>
