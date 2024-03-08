@@ -1,9 +1,11 @@
 import { CardText } from 'react-bootstrap';
+import {Link, useNavigate} from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from "react-bootstrap/ListGroup";
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button'
 
-function RnMCard({ 
+const RnMCard = ({ 
     intID,
     imgSrc, 
     strName,
@@ -13,7 +15,14 @@ function RnMCard({
     strGender,
     strOrigin,
     strLocation 
-    }) {
+    }) => {
+
+        const routeToCharacter = `/character/${intID}`;
+        const navigate = useNavigate();
+
+        const processButtonClick = () => {
+            navigate(routeToCharacter);
+        }
     return(
 
         <Col className="tw-bg-purple-600">
@@ -29,6 +38,7 @@ function RnMCard({
                         <ListGroup.Item>Origin: {strOrigin}</ListGroup.Item>
                         <ListGroup.Item>Location: {strLocation}</ListGroup.Item>
                     </ListGroup>
+                    <Button onClick={processButtonClick} variant="primary">See Details</Button>
                     </CardText>
                     </Card.Body>
                 </Card>

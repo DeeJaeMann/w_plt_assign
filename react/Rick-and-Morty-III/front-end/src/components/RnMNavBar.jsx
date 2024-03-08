@@ -4,14 +4,14 @@ import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
 
 
-function RnMNavBar () {
+const RnMNavBar = () => {
     return (
         <>
             <Navbar expand="lg" className="tw-bg-purple-300 border border-secondary rounded-bottom sticky-top">
                 <Container className="d-flex align-items-start m-0">
                     <Navbar.Brand as={Link} to="/" className="bg-dark text-white p-2 rounded">
                         <img
-                            src="./src/assets/rick-morty-11.png"
+                            src="/src/assets/rick-morty-11.png"
                             width="30"
                             height="30"
                             className="d-inline-block align-top"

@@ -4,7 +4,9 @@ import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import CharactersPage from "./pages/CharactersPage";
+import CharacterDetailsPage from "./pages/CharacterDetailsPage";
 import getCharacters from "./lib/getCharacters";
+import getThisCharacter from "./lib/getThisCharacter";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,11 @@ const router = createBrowserRouter([
                 path: "characters/",
                 element: <CharactersPage />,
                 loader: getCharacters, // loader: fetchCharacter(id)
+            },
+            {
+                path: "character/:id",
+                element: <CharacterDetailsPage/>,
+                loader: ({ params }) => getThisCharacter(params.id)
             }
         ],
         errorElement: <NotFound />

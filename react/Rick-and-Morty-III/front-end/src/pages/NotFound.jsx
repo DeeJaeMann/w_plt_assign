@@ -1,7 +1,7 @@
 import RnMNavBar from "../components/RnMNavBar";
 
 
-function NotFound() {
+const NotFound = () => {
     return (
         <>
             <RnMNavBar />
