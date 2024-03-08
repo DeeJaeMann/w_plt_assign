@@ -1,4 +1,4 @@
-const AboutPage = () => {
+function AboutPage() {
     /*
         Should render general 'about me' info from the show
         Use API to render info (what info can you get from the API?)
