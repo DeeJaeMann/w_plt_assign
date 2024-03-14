@@ -4,6 +4,9 @@ DROP TABLE IF EXISTS employee;
 DROP TABLE IF EXISTS game;
 DROP TABLE IF EXISTS poster;
 
+-- Add schema comment (doesn't work/not used correctly)
+-- COMMENT ON SCHEMA game_review IS 'This schema contains the game store review data.';
+
 -- Create tables
 CREATE TABLE action_figure (
     id SERIAL 
@@ -17,6 +20,8 @@ CREATE TABLE action_figure (
         NOT NULL
 );
 
+COMMENT ON TABLE action_figure IS 'This table contains the action figure data.';
+
 CREATE TABLE employee (
     id SERIAL 
         PRIMARY KEY,
@@ -27,6 +32,8 @@ CREATE TABLE employee (
     salary DECIMAL(7,2)
         NOT NULL
 );
+
+COMMENT ON TABLE employee IS 'This table contains the employee data.';
 
 CREATE TABLE game (
     game_id SERIAL
@@ -40,6 +47,8 @@ CREATE TABLE game (
         NOT NULL
 );
 
+COMMENT ON TABLE game IS 'This table contains the game data.';
+
 CREATE TABLE poster (
     id SERIAL
         PRIMARY KEY,
@@ -51,3 +60,5 @@ CREATE TABLE poster (
     price DECIMAL(4,2)
         NOT NULL
 );
+
+COMMENT ON TABLE poster IS 'This table contains the poster data.';
