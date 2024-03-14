@@ -16,13 +16,13 @@ CREATE TABLE action_figure (
     title VARCHAR(50) 
         UNIQUE 
         NOT NULL 
-        CHECK(title ~ '^[A-Z0-9][\w\s\-]*$'),
+        CHECK(title ~ '^[A-Z\d][a-z]*(?:(?: |-)[A-Z\d][a-z]*)*$'),
     quantity INT 
         NOT NULL 
-        CHECK(quantity > 0 AND quantity < 31),
+        CHECK(quantity BETWEEN 1 AND 30),
     price DECIMAL(5,2) 
         NOT NULL 
-        CHECK(price > 9.99 AND price < 100.01)
+        CHECK(price BETWEEN 10 AND 100)
 );
 
 CREATE TABLE poster (
@@ -30,13 +30,13 @@ CREATE TABLE poster (
     title VARCHAR(50)
         NOT NULL
         UNIQUE
-        CHECK(title ~ '^[A-Z0-9][\w\-\s]*$'),
+        CHECK(title ~ '^[A-Z0-9][A-Za-z]*(?:(?: |-)[A-Z\d][a-z]*)*$'),
     quantity INT
         NOT NULL
-        CHECK(quantity > 0 AND quantity < 31),
+        CHECK(quantity BETWEEN 1 AND 30),
     price DECIMAL(4,2)
         NOT NULL
-        CHECK(price > 5.99 AND price < 20.01)
+        CHECK(price BETWEEN 6 AND 20)
 );
 
 CREATE TABLE gaming_engine (
