@@ -12,7 +12,7 @@ CREATE TABLE action_figure (
         NOT NULL
         UNIQUE,
     quantity INT
-        NOT NULL
+        NOT NULL,
     price DECIMAL(4,2)
         NOT NULL
 );
@@ -22,7 +22,7 @@ CREATE TABLE employee (
         PRIMARY KEY,
     employee_name VARCHAR(30)
         NOT NULL,
-    position VARCHAR(30)
+    position VARCHAR
         NOT NULL,
     salary DECIMAL(7,2)
         NOT NULL
