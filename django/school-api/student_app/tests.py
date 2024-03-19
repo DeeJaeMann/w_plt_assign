@@ -3,7 +3,7 @@ from .models import Student
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 
-
+# Ensure there are no duplicates!
 # Create your tests here.
 class Test_student(TestCase):
     def test_001_student_with_improper_good_student_field(self):
