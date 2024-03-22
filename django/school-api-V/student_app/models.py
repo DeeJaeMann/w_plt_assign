@@ -1,6 +1,6 @@
 from django.db import models
 from django.core import validators as v
-from subject_app.models import Subject
+from grade_app.models import Subject
 from .validators import validate_name, validate_school_email, validate_combination_format
 
 # Create your models here.
@@ -28,7 +28,8 @@ class Student(models.Model):
 
     def add_subject(self, int_subject_id):
         # Takes given subject id and adds it to the student if the student's class schedule is not full.
-        int_subjects_length = len(self.subjects)
+        # int_subjects_length = len(self.subjects)
+        int_subjects_length = self.subjects.count()
 
         if int_subjects_length > 8:
             subject = Subject.objects.get(id=int_subject_id)
@@ -38,7 +39,8 @@ class Student(models.Model):
     
     def remove_subject(self, int_subject_id):
         # Takes given subject id and removes it from the student if the student's class schedule is not empty.
-        int_subjects_length = len(self.subjects)
+        # int_subjects_length = len(self.subjects)
+        int_subjects_length = self.subjects.count()
 
         if int_subjects_length > 0:
             subject = Subject.objects.get(id=int_subject_id)
