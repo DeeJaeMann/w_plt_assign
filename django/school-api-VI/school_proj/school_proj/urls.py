@@ -22,4 +22,5 @@ base_url = "api/v1/"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(f"{base_url}students/", include("student_app.urls")),
+    path(f"{base_url}subjects/", include("subject_app.urls")),
 ]

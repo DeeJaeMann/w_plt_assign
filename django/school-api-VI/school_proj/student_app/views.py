@@ -9,5 +9,5 @@ class All_students(APIView):
     def get(self, request):
         students = Student.objects.all()
         ser_students = StudentAllSerializer(students, many=True)
-        print(ser_students)
+        # print(ser_students)
         return Response(ser_students.data)

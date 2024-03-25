@@ -1,5 +1,6 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from .models import Student
+from subject_app.serializers import SubjectAllSerializer, Subject
 
 
 class StudentSerializer(ModelSerializer):
@@ -17,5 +18,7 @@ class StudentAllSerializer(ModelSerializer):
 
     def get_subjects(self, instance):
         subjects = instance.subjects.all()
-        ser_subjects = [{'subject_name':sub.subject_name, 'professor':sub.professor} for sub in subjects]
-        return ser_subjects
+
+        ser_subjects = SubjectAllSerializer(subjects, many=True)
+
+        return ser_subjects.data
