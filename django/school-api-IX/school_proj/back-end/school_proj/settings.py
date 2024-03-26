@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "subject_app",
     "grade_app",
     "corsheaders",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,8 @@ WSGI_APPLICATION = "school_proj.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "school_db",
+        "NAME": "school_db_ix",
+        "USER": "deemann",
     }
 }
 
