@@ -2,11 +2,17 @@ from rest_framework import serializers
 from .models import Student
 from subject_app.serializers import SubjectSerializer
 
+#TODO: Refactor repeatitive code
 
 class StudentSerializer(serializers.ModelSerializer):
+    subjects = SubjectSerializer(many=True)
+
     class Meta:
         model = Student
-        fields = ["name", "student_email", "locker_number"]
+        exclude = ['id']
+
+        def get_subjects(self, instance):
+            return SubjectSerializer(instance.students.all(), many=True).data
 
 
 class StudentAllSerializer(serializers.ModelSerializer):
@@ -14,15 +20,7 @@ class StudentAllSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Student
-        fields = [
-            "name",
-            "student_email",
-            "personal_email",
-            "locker_number",
-            "locker_combination",
-            "good_student",
-            "subjects",
-        ]
+        exclude = ['id']
 
-        # def get_subjects(self, obj):
-        #     return SubjectSerializer(obj.students.all(), many=True).data
+        def get_subjects(self, instance):
+            return SubjectSerializer(instance.students.all(), many=True).data
