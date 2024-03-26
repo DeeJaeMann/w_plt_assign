@@ -11,8 +11,8 @@ class All_subjects(APIView):
         return Response(serialized_subjects.data)
     
 class A_subject(APIView):
-    def get(self, request, subject_name):
-        subject_name=subject_name.title()
-        subject = get_object_or_404(Subject, subject_name=subject_name)
+    def get(self, request, subject):
+        subject=subject.title()
+        subject = get_object_or_404(Subject, subject_name=subject)
         ser_subject = SubjectSerializer(subject)
         return Response(ser_subject.data)
